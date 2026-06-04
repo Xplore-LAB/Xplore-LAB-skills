@@ -278,6 +278,8 @@ metadata:
 
 When the user asks to use Visio, export to Visio, generate a `.vsdx`, or control Visio as part of a flowchart task, include Visio as an optional final delivery target after the normal flowchart extraction and beautification workflow.
 
+For concrete Visio COM execution steps and script patterns, read `references/visio-automation.md` before generating or running the renderer.
+
 Preferred workflow:
 
 1. Extract the source article, diagram, or description into a normalized flow structure: nodes, edges, decision points, groups, labels, and layout hints.
