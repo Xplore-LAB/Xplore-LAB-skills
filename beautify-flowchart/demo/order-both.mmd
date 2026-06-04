@@ -1,0 +1,76 @@
+%% Both模式：布局+样式全面美化
+flowchart TD
+    subgraph 下单阶段 ["🛒 下单阶段"]
+        A([客户下单]):::startEnd
+        B{库存充足?}:::decision
+        C[通知缺货]:::error
+        E[锁定库存]:::process
+        F[生成订单]:::process
+
+        A --> B
+        B -->|否| C
+        B -->|是| E
+        E --> F
+    end
+
+    subgraph 支付阶段 ["💳 支付阶段"]
+        G{支付成功?}:::decision
+        H[支付失败]:::error
+        I{重试<3次?}:::decision
+        J[取消订单]:::error
+        K[释放库存]:::process
+
+        F --> G
+        G -->|否| H
+        H --> I
+        I -->|是| G
+        I -->|否| J
+        J --> K
+    end
+
+    subgraph 确认发货 ["📦 确认发货"]
+        L[确认订单]:::success
+        M[通知仓库]:::process
+        N[打包发货]:::process
+
+        G -->|是| L
+        L --> M
+        M --> N
+    end
+
+    subgraph 物流配送 ["🚚 物流配送"]
+        O{配送完成?}:::decision
+        P[等待配送]:::process
+        Q[客户签收]:::process
+
+        N --> O
+        O -->|否| P
+        P --> O
+        O -->|是| Q
+    end
+
+    subgraph 订单完成 ["🎉 订单完成"]
+        R[完成订单]:::success
+        S[评价反馈]:::io
+        D([结束]):::startEnd
+
+        Q --> R
+        R --> S
+        S --> D
+    end
+
+    K --> D
+    C --> D
+
+    classDef startEnd fill:#667eea,stroke:#5a67d8,stroke-width:3px,color:#fff,font-weight:bold,font-size:16px
+    classDef process fill:#4facfe,stroke:#38bdf8,stroke-width:2px,color:#fff,font-weight:bold
+    classDef decision fill:#f093fb,stroke:#ec4899,stroke-width:2px,color:#fff,font-weight:bold
+    classDef io fill:#43e97b,stroke:#34d399,stroke-width:2px,color:#fff,font-weight:bold
+    classDef success fill:#11998e,stroke:#10b981,stroke-width:3px,color:#fff,font-weight:bold,font-size:16px
+    classDef error fill:#ff0844,stroke:#ef4444,stroke-width:2px,color:#fff,font-weight:bold
+
+    style 下单阶段 fill:#f5f7fa,stroke:#94a3b8,stroke-width:2px,color:#334155,font-weight:bold
+    style 支付阶段 fill:#f5f7fa,stroke:#94a3b8,stroke-width:2px,color:#334155,font-weight:bold
+    style 确认发货 fill:#f5f7fa,stroke:#94a3b8,stroke-width:2px,color:#334155,font-weight:bold
+    style 物流配送 fill:#f5f7fa,stroke:#94a3b8,stroke-width:2px,color:#334155,font-weight:bold
+    style 订单完成 fill:#f5f7fa,stroke:#94a3b8,stroke-width:2px,color:#334155,font-weight:bold

@@ -1,0 +1,59 @@
+%% Layout模式：优化布局结构，使用分组
+flowchart TD
+    subgraph 下单阶段 ["🛒 下单阶段"]
+        A[客户下单] --> B{库存充足?}
+        B -->|否| C[通知缺货]
+        B -->|是| E[锁定库存]
+        E --> F[生成订单]
+    end
+
+    subgraph 支付阶段 ["💳 支付阶段"]
+        F --> G{支付成功?}
+        G -->|否| H[支付失败]
+        H --> I{重试次数<3?}
+        I -->|是| G
+        I -->|否| J[取消订单]
+        J --> K[释放库存]
+    end
+
+    subgraph 发货阶段 ["📦 发货阶段"]
+        G -->|是| L[确认订单]
+        L --> M[通知仓库]
+        M --> N[打包发货]
+        N --> O{配送完成?}
+        O -->|否| P[等待配送]
+        P --> O
+    end
+
+    subgraph 完成阶段 ["✅ 完成阶段"]
+        O -->|是| Q[客户签收]
+        Q --> R[完成订单]
+        R --> S[评价反馈]
+    end
+
+    %% 简洁配色
+    style A fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style B fill:#fff3e0,stroke:#ff9800,stroke-width:2px
+    style C fill:#ffebee,stroke:#f44336,stroke-width:2px
+    style D fill:#e8eaf6,stroke:#3f51b5,stroke-width:2px
+    style E fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style F fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style G fill:#fff3e0,stroke:#ff9800,stroke-width:2px
+    style H fill:#ffebee,stroke:#f44336,stroke-width:2px
+    style I fill:#fff3e0,stroke:#ff9800,stroke-width:2px
+    style J fill:#ffebee,stroke:#f44336,stroke-width:2px
+    style K fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style L fill:#e8f5e9,stroke:#4caf50,stroke-width:2px
+    style M fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style N fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style O fill:#fff3e0,stroke:#ff9800,stroke-width:2px
+    style P fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px
+    style Q fill:#e8f5e9,stroke:#4caf50,stroke-width:2px
+    style R fill:#e8f5e9,stroke:#4caf50,stroke-width:2px
+    style S fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px
+
+    %% 子图样式
+    style 下单阶段 fill:#f5f5f5,stroke:#9e9e9e,stroke-width:1px
+    style 支付阶段 fill:#f5f5f5,stroke:#9e9e9e,stroke-width:1px
+    style 发货阶段 fill:#f5f5f5,stroke:#9e9e9e,stroke-width:1px
+    style 完成阶段 fill:#f5f5f5,stroke:#9e9e9e,stroke-width:1px

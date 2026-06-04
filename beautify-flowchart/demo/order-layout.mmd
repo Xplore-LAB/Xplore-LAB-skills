@@ -1,0 +1,58 @@
+%% Layout模式：优化布局结构，分组清晰
+flowchart TD
+    subgraph 下单阶段 ["🛒 下单阶段"]
+        A[客户下单] --> B{库存充足?}
+        B -->|否| C[通知缺货]
+        C --> D([结束])
+        B -->|是| E[锁定库存]
+        E --> F[生成订单]
+    end
+
+    subgraph 支付阶段 ["💳 支付阶段"]
+        F --> G{支付成功?}
+        G -->|否| H[支付失败]
+        H --> I{重试次数<3?}
+        I -->|是| G
+        I -->|否| J[取消订单]
+        J --> K[释放库存]
+        K --> D
+    end
+
+    subgraph 订单确认 ["✅ 订单确认"]
+        G -->|是| L[确认订单]
+        L --> M[通知仓库]
+        M --> N[打包发货]
+    end
+
+    subgraph 物流配送 ["🚚 物流配送"]
+        N --> O{配送完成?}
+        O -->|否| P[等待配送]
+        P --> O
+        O -->|是| Q[客户签收]
+    end
+
+    subgraph 完成 ["🎉 完成"]
+        Q --> R[完成订单]
+        R --> S[评价反馈]
+        S --> D
+    end
+
+    style A fill:#e8eaf6,stroke:#3f51b5,stroke-width:2px
+    style B fill:#fff3e0,stroke:#ff9800,stroke-width:2px
+    style C fill:#ffebee,stroke:#f44336,stroke-width:2px
+    style D fill:#e8eaf6,stroke:#3f51b5,stroke-width:2px
+    style E fill:#e8eaf6,stroke:#3f51b5,stroke-width:2px
+    style F fill:#e8eaf6,stroke:#3f51b5,stroke-width:2px
+    style G fill:#fff3e0,stroke:#ff9800,stroke-width:2px
+    style H fill:#ffebee,stroke:#f44336,stroke-width:2px
+    style I fill:#fff3e0,stroke:#ff9800,stroke-width:2px
+    style J fill:#ffebee,stroke:#f44336,stroke-width:2px
+    style K fill:#e8eaf6,stroke:#3f51b5,stroke-width:2px
+    style L fill:#e8f5e9,stroke:#4caf50,stroke-width:2px
+    style M fill:#e8eaf6,stroke:#3f51b5,stroke-width:2px
+    style N fill:#e8eaf6,stroke:#3f51b5,stroke-width:2px
+    style O fill:#fff3e0,stroke:#ff9800,stroke-width:2px
+    style P fill:#e8eaf6,stroke:#3f51b5,stroke-width:2px
+    style Q fill:#e8eaf6,stroke:#3f51b5,stroke-width:2px
+    style R fill:#e8f5e9,stroke:#4caf50,stroke-width:2px
+    style S fill:#e8eaf6,stroke:#3f51b5,stroke-width:2px

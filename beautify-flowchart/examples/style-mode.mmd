@@ -1,0 +1,26 @@
+%% style模式示例：保持原布局，仅美化样式
+%% 使用专业配色和形状区分
+flowchart TD
+    Start([开始]):::startEnd --> Input[/输入用户名/]:::io
+    Input --> CheckUser{用户名是否有效?}:::decision
+
+    CheckUser -->|是| InputPass[/输入密码/]:::io
+    CheckUser -->|否| Input
+
+    InputPass --> CheckPass{密码是否正确?}:::decision
+
+    CheckPass -->|是| Success[登录成功]:::success
+    CheckPass -->|否| Error[显示错误]:::error
+
+    Error --> InputPass
+
+    Success --> Home[进入主页]:::process
+    Home --> End([结束]):::startEnd
+
+    %% 专业配色方案
+    classDef startEnd fill:#c8e6c9,stroke:#2e7d32,stroke-width:3px,color:#1b5e20,font-weight:bold
+    classDef process fill:#bbdefb,stroke:#1565c0,stroke-width:2px,color:#0d47a1
+    classDef decision fill:#fff9c4,stroke:#f9a825,stroke-width:2px,color:#f57f17,font-weight:bold
+    classDef io fill:#f8bbd9,stroke:#c62828,stroke-width:2px,color:#b71c1c
+    classDef success fill:#a5d6a7,stroke:#388e3c,stroke-width:3px,color:#1b5e20,font-weight:bold
+    classDef error fill:#ef9a9a,stroke:#d32f2f,stroke-width:2px,color:#c62828
