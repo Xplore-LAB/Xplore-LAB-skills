@@ -1,0 +1,45 @@
+%% both模式示例：同时优化布局和样式
+%% 专业设计，全面美化
+flowchart TD
+    subgraph 认证流程 ["🔐 认证流程"]
+        Start([开始]):::startEnd
+        InputUser[/输入用户名/]:::io
+        CheckUser{用户名有效?}:::decision
+        InputPass[/输入密码/]:::io
+        CheckPass{密码正确?}:::decision
+
+        Start --> InputUser
+        InputUser --> CheckUser
+        CheckUser -->|否| InputUser
+        CheckUser -->|是| InputPass
+        InputPass --> CheckPass
+    end
+
+    subgraph 业务处理 ["⚙️ 业务处理"]
+        Success[登录成功]:::success
+        Error[显示错误]:::error
+        Home[进入主页]:::process
+
+        CheckPass -->|是| Success
+        CheckPass -->|否| Error
+        Error --> InputPass
+        Success --> Home
+    end
+
+    subgraph 完成 ["✅ 完成"]
+        End([结束]):::startEnd
+        Home --> End
+    end
+
+    %% 专业配色
+    classDef startEnd fill:#667eea,stroke:#5a67d8,stroke-width:3px,color:#fff,font-weight:bold,font-size:16px
+    classDef process fill:#4facfe,stroke:#38bdf8,stroke-width:2px,color:#fff,font-weight:bold
+    classDef decision fill:#f093fb,stroke:#ec4899,stroke-width:2px,color:#fff,font-weight:bold
+    classDef io fill:#43e97b,stroke:#34d399,stroke-width:2px,color:#fff,font-weight:bold
+    classDef success fill:#11998e,stroke:#10b981,stroke-width:3px,color:#fff,font-weight:bold,font-size:16px
+    classDef error fill:#ff0844,stroke:#ef4444,stroke-width:2px,color:#fff,font-weight:bold
+
+    %% 子图美化
+    style 认证流程 fill:#f5f7fa,stroke:#94a3b8,stroke-width:2px,color:#334155,font-weight:bold
+    style 业务处理 fill:#f5f7fa,stroke:#94a3b8,stroke-width:2px,color:#334155,font-weight:bold
+    style 完成 fill:#f5f7fa,stroke:#94a3b8,stroke-width:2px,color:#334155,font-weight:bold

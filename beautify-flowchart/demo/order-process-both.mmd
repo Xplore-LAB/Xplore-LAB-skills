@@ -1,0 +1,83 @@
+%% Both模式：同时优化布局和样式，专业设计
+flowchart TD
+    subgraph 下单阶段 ["🛒 下单阶段"]
+        Start([开始]):::startEnd
+        Order[客户下单]:::process
+        CheckStock{库存充足?}:::decision
+
+        Start --> Order
+        Order --> CheckStock
+    end
+
+    subgraph 库存处理 ["📦 库存处理"]
+        OutOfStock[通知缺货]:::warning
+        LockStock[锁定库存]:::process
+        GenOrder[生成订单]:::process
+
+        CheckStock -->|否| OutOfStock
+        CheckStock -->|是| LockStock
+        LockStock --> GenOrder
+    end
+
+    subgraph 支付阶段 ["💳 支付阶段"]
+        PayCheck{支付成功?}:::decision
+        PayFail[支付失败]:::error
+        RetryCheck{重试<3次?}:::decision
+        Cancel[取消订单]:::error
+        Release[释放库存]:::process
+
+        GenOrder --> PayCheck
+        PayCheck -->|否| PayFail
+        PayFail --> RetryCheck
+        RetryCheck -->|是| PayCheck
+        RetryCheck -->|否| Cancel
+        Cancel --> Release
+    end
+
+    subgraph 订单确认 ["✅ 订单确认"]
+        Confirm[确认订单]:::success
+        Notify[通知仓库]:::process
+        Pack[打包发货]:::process
+
+        PayCheck -->|是| Confirm
+        Confirm --> Notify
+        Notify --> Pack
+    end
+
+    subgraph 配送阶段 ["🚚 配送阶段"]
+        DelCheck{配送完成?}:::decision
+        Waiting[等待配送]:::io
+        Sign[客户签收]:::success
+
+        Pack --> DelCheck
+        DelCheck -->|否| Waiting
+        Waiting --> DelCheck
+        DelCheck -->|是| Sign
+    end
+
+    subgraph 完成 ["🎉 完成"]
+        Complete[完成订单]:::success
+        Feedback[评价反馈]:::io
+        End([结束]):::startEnd
+
+        Sign --> Complete
+        Complete --> Feedback
+        Feedback --> End
+    end
+
+    %% 专业配色方案
+    classDef startEnd fill:#667eea,stroke:#5a67d8,stroke-width:3px,color:#fff,font-weight:bold,font-size:16px
+    classDef process fill:#4facfe,stroke:#38bdf8,stroke-width:2px,color:#fff,font-weight:bold
+    classDef decision fill:#f093fb,stroke:#ec4899,stroke-width:2px,color:#fff,font-weight:bold
+    classDef io fill:#43e97b,stroke:#34d399,stroke-width:2px,color:#fff,font-weight:bold
+    classDef success fill:#11998e,stroke:#10b981,stroke-width:3px,color:#fff,font-weight:bold,font-size:16px
+    classDef error fill:#ff0844,stroke:#ef4444,stroke-width:2px,color:#fff,font-weight:bold
+    classDef warning fill:#ff9f43,stroke:#f39c12,stroke-width:2px,color:#fff,font-weight:bold
+
+    %% 子图美化
+    style 下单阶段 fill:#f8fafc,stroke:#64748b,stroke-width:2px,color:#334155,font-weight:bold
+    style 库存处理 fill:#f8fafc,stroke:#64748b,stroke-width:2px,color:#334155,font-weight:bold
+    style 支付阶段 fill:#f8fafc,stroke:#64748b,stroke-width:2px,color:#334155,font-weight:bold
+    style 订单确认 fill:#f8fafc,stroke:#64748b,stroke-width:2px,color:#334155,font-weight:bold
+    style 配送阶段 fill:#f8fafc,stroke:#64748b,stroke-width:2px,color:#334155,font-weight:bold
+    style 完成 fill:#f8fafc,stroke:#64748b,stroke-width:2px,color:#334155,font-weight:bold

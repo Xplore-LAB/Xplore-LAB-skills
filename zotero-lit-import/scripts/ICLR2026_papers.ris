@@ -1,0 +1,447 @@
+TY  - CONF
+TI  - From Large to Small: Transferring CUDA Optimization Expertise via Reasoning Graph
+AU  - Gong, Junfeng
+AU  - Wei, Zhiyi
+AU  - Chen, Junying
+AU  - Liu, Cheng
+AU  - Li, Huawei
+PY  - 2026
+UR  - https://openreview.net/forum?id=vqESUhcSOG
+T2  - ICLR 2026
+N1  - ReGraphT: 将LLM级推理能力迁移到小模型(SLM)的检索增强框架，通过推理图组织CUDA优化轨迹，使用Monte Carlo Graph Search进行高效探索
+ER  - 
+
+TY  - CONF
+TI  - SLM-MUX: Orchestrating Small Language Models for Reasoning
+AU  - Wang, Chenyu
+AU  - Wan, Zishen
+AU  - Kang, Hao
+AU  - Chen, Emma
+AU  - Xie, Zhiqiang
+AU  - Krishna, Tushar
+AU  - Reddi, Vijay Janapa
+AU  - Du, Yilun
+PY  - 2026
+UR  - https://openreview.net/forum?id=317bcKF4zv
+T2  - ICLR 2026
+N1  - 三阶段SLM编排方法，通过模型选择搜索和测试时缩放协调多个小语言模型，在MATH/GPQA/GSM8K上分别提升13.4%/8.8%/7.0%
+ER  - 
+
+TY  - CONF
+TI  - NRGPT: An Energy-based Alternative for GPT
+AU  - Dehmamy, Nima
+AU  - Hoover, Benjamin
+AU  - Saha, Bishwajit
+AU  - Kozachkov, Leo
+AU  - Slotine, Jean-Jacques
+AU  - Krotov, Dmitry
+PY  - 2026
+UR  - https://openreview.net/forum?id=B3Muyi2zgo
+T2  - ICLR 2026
+N1  - 提出能量基GPT替代方案NRGPT，将推理视为在能量景观上探索tokens，在简单语言和WebText语言建模中表现良好
+ER  - 
+
+TY  - CONF
+TI  - Long-Document QA with Chain-of-Structured-Thought and Fine-Tuned SLMs
+AU  - Liang, Zhuowen
+AU  - Lin, Xiaotian
+AU  - Zhang, Zhengxuan
+AU  - Luo, Yuyu
+AU  - Wang, Haixun
+AU  - Tang, Nan
+PY  - 2026
+UR  - https://openreview.net/forum?id=faECRsdRav
+T2  - ICLR 2026
+N1  - LiteCoST框架：Chain-of-Structured-Thought + SLM微调，使用3B/7B模型实现与LLM相当的文档问答质量，延迟降低2-4倍
+ER  - 
+
+TY  - CONF
+TI  - FutureMind: Equipping Small Language Models with Strategic Thinking-Pattern Priors via Adaptive Knowledge Distillation
+AU  - Yang, Shaoxiong
+AU  - Li, Junting
+AU  - Zhang, Mengyuan
+AU  - Li, Chao
+AU  - Liu, Wei
+AU  - Luan, Jian
+PY  - 2026
+UR  - https://openreview.net/forum?id=gX42SSbjcC
+T2  - ICLR 2026
+N1  - 通过自适应知识蒸馏从LLM引入策略性思维先验，设计动态推理流程（问题分析/逻辑推理/策略规划/检索引导），在多跳QA上超越Search-o1
+ER  - 
+
+TY  - CONF
+TI  - ABBA-Adapters: Efficient and Expressive Fine-Tuning of Foundation Models
+AU  - ICLR 2026 Model Compression
+PY  - 2026
+UR  - https://papernotes.org/ICLR2026/model_compression/
+T2  - ICLR 2026
+N1  - 提出ABBA适配器，将权重更新参数化为两个独立可学习的低秩矩阵的Hadamard积，在相同参数预算下实现远高于LoRA的有效秩
+ER  - 
+
+TY  - CONF
+TI  - LoFT: Low-Rank Adaptation That Behaves Like Full Fine-Tuning
+AU  - ICLR 2026 Model Compression
+PY  - 2026
+UR  - https://papernotes.org/ICLR2026/model_compression/
+T2  - ICLR 2026
+N1  - 通过对齐优化器内部动态（动量和二阶矩）与全参微调行为一致的低秩适配方法，在全秩极限下可精确恢复AdamW
+ER  - 
+
+TY  - CONF
+TI  - LD-MoLE: Learnable Dynamic Routing for Mixture of LoRA Experts
+AU  - ICLR 2026 Model Compression
+PY  - 2026
+UR  - https://papernotes.org/ICLR2026/model_compression/
+T2  - ICLR 2026
+N1  - 用Sparsegen闭合形式投影替代传统TopK路由，实现可微分、动态、token自适应的LoRA专家分配
+ER  - 
+
+TY  - CONF
+TI  - MobileLLM-R1: Exploring the Limits of Sub-Billion Language Model Reasoners with Open Training Recipes
+AU  - ICLR 2026 Model Compression
+PY  - 2026
+UR  - https://openreview.net/forum?id=unknown
+T2  - ICLR 2026
+N1  - 通过精心数据筛选和自适应混合策略，仅用4.2T token预训练出亿级参数推理模型，在AIME等推理基准上匹配或超越Qwen3-0.6B
+ER  - 
+
+TY  - CONF
+TI  - Knowledge Fusion of Large Language Models Via Modular Skillpacks
+AU  - ICLR 2026 Model Compression
+PY  - 2026
+UR  - https://papernotes.org/ICLR2026/model_compression/
+T2  - ICLR 2026
+N1  - 提出GraftLLM——将异构源模型能力提取为紧凑可迁移的SkillPack（模块化技能包），支持知识迁移、异构模型融合和无遗忘持续学习
+ER  - 
+
+TY  - CONF
+TI  - PAMM: Point-Approximate Matrix Multiplication for Activations
+AU  - ICLR 2026 Model Compression
+PY  - 2026
+UR  - https://papernotes.org/ICLR2026/model_compression/
+T2  - ICLR 2026
+N1  - 通过随机选取少量代表性token来近似QKV投影层激活，实现高达512×压缩率的激活压缩技术
+ER  - 
+
+TY  - CONF
+TI  - Taming Momentum: Rethinking Optimizer States Through Low-Rank Approximation
+AU  - ICLR 2026 Model Compression
+PY  - 2026
+UR  - https://papernotes.org/ICLR2026/model_compression/
+T2  - ICLR 2026
+N1  - 揭示动量EMA更新等价于在线线性回归的梯度下降，提出LoRA-Pre通过低秩分解压缩优化器动量，实现显存高效的LLM预训练和微调
+ER  - 
+
+TY  - CONF
+TI  - TiTok: Transfer Token-level Knowledge via Contrastive Excess to Transplant LoRA
+AU  - ICLR 2026 Model Compression
+PY  - 2026
+UR  - https://papernotes.org/ICLR2026/model_compression/
+T2  - ICLR 2026
+N1  - 通过token级对比超额分数实现LoRA适配器跨模型高效迁移，无需额外判别器模型
+ER  - 
+
+TY  - CONF
+TI  - Q-RAG: Long Context Multi-Step Retrieval via Value-Based Embedder Training
+AU  - Sorokin, Artyom
+AU  - Buzun, Nazar
+AU  - Anokhin, Aleksandr
+AU  - KONSTANTINOVICH VEDERNIKOV, Egor
+AU  - Anokhin, Petr
+AU  - Burtsev, Mikhail
+AU  - Burnaev, Evgeny
+PY  - 2026
+UR  - https://openreview.net/forum?id=MS9nWFY7LG
+T2  - ICLR 2026
+N1  - 通过强化学习微调Embedder模型实现多步检索，为开放域问答提供资源高效的替代方案，在长上下文基准BabiLong上表现优异
+ER  - 
+
+TY  - CONF
+TI  - Enough is as good as a feast: A Comprehensive Analysis of How Reinforcement Learning Mitigates Task Conflicts in LLMs
+AU  - Ren, Zixuan
+AU  - Lu, Jinliang
+AU  - Wu, Junhong
+AU  - Zhao, Yang
+AU  - Dai, Dai
+AU  - Wu, Hua
+AU  - Wang, Haifeng
+AU  - Zong, Chengqing
+PY  - 2026
+UR  - https://openreview.net/forum?id=N4l4Jp50R4
+T2  - ICLR 2026
+N1  - 系统分析强化学习如何缓解LLM中的任务冲突，全面分析RL对多任务学习的增益机制
+ER  - 
+
+TY  - CONF
+TI  - Attention as a Compass: Efficient Exploration for Process-Supervised RL in Reasoning Models
+AU  - Liu, Runze
+AU  - Wang, Jiakang
+AU  - Shi, Yuling
+AU  - Xie, Zhihui
+AU  - An, Chenxin
+AU  - Zhang, Kaiyan
+AU  - Zhao, Jian
+AU  - Gu, Xiaodong
+AU  - Lin, Lei
+AU  - Hu, Wenping
+AU  - Li, Xiu
+AU  - Zhang, Fuzheng
+AU  - Zhou, Guorui
+AU  - Gai, Kun
+PY  - 2026
+UR  - https://openreview.net/forum?id=NCN8oUsiNf
+T2  - ICLR 2026
+N1  - 将注意力机制作为探索指南，为推理模型中的过程监督RL提供高效探索策略，代码：https://github.com/RyanLiu112/AttnRL
+ER  - 
+
+TY  - CONF
+TI  - Why DPO is a Misspecified Estimator and How to Fix It
+AU  - Gopalan, Aditya
+AU  - Chowdhury, Sayak Ray
+AU  - Banerjee, Debangshu
+PY  - 2026
+UR  - https://openreview.net/forum?id=btEiAfnLsX
+T2  - ICLR 2026
+N1  - 理论分析DPO作为错定估计器的问题，并提出修正方法，对RLHF/DPO实践有重要指导意义
+ER  - 
+
+TY  - CONF
+TI  - Count Counts: Motivating Exploration in LLM Reasoning with Count-based Intrinsic Rewards
+AU  - Zhang, Xuan
+AU  - Li, Ruixiao
+AU  - Zhou, Zhijian
+AU  - Li, Long
+AU  - Qin, Yulei
+AU  - Li, Ke
+AU  - Sun, Xing
+AU  - Tan, Xiaoyu
+AU  - Qu, Chao
+AU  - Qi, Yuan
+PY  - 2026
+UR  - https://openreview.net/forum?id=9xIBbfItGP
+T2  - ICLR 2026
+N1  - 将基于计数的内在奖励应用于LLM推理中的探索激励，通过count-based intrinsic rewards提升推理多样性
+ER  - 
+
+TY  - CONF
+TI  - Meta-RL Induces Exploration in Language Agents
+AU  - Jiang, Yulun
+AU  - Jiang, Liangze
+AU  - Teney, Damien
+AU  - Moor, Michael
+AU  - Brbic, Maria
+PY  - 2026
+UR  - https://openreview.net/forum?id=4GiBscHW1k
+T2  - ICLR 2026
+N1  - 证明Meta-RL可以诱导语言Agent的探索行为，对AI+自动化和Agent研究有重要意义
+ER  - 
+
+TY  - CONF
+TI  - ContextIF: Enhancing Instruction-Following through Context Reward
+AU  - Zhong, Yule
+AU  - Yao, Jiacheng
+AU  - He, Guoxiu
+PY  - 2026
+UR  - https://openreview.net/forum?id=IuscGSmfEf
+T2  - ICLR 2026
+N1  - 通过上下文奖励增强指令遵循能力，代码：https://github.com/ECNU-Text-Computing/ContextIF
+ER  - 
+
+TY  - CONF
+TI  - EMFuse: Energy-based Model Fusion for Decision Making
+AU  - He, Kejie
+AU  - Li, Yi-Chen
+AU  - Yu, Yang
+PY  - 2026
+UR  - https://openreview.net/forum?id=6wDp8XRmNI
+T2  - ICLR 2026
+N1  - 将能量基模型融合用于决策制定，代码：https://github.com/LAMDA-RL/EMFuse
+ER  - 
+
+TY  - CONF
+TI  - DeepCompress: A Dual Reward Strategy for Dynamically Exploring and Compressing Reasoning Chains
+AU  - Liang, Tian
+AU  - Jiao, Wenxiang
+AU  - He, Zhiwei
+AU  - Xu, Jiahao
+AU  - Mi, Haitao
+AU  - Yu, Dong
+PY  - 2026
+UR  - https://openreview.net/forum?id=K5A2jBmEBK
+T2  - ICLR 2026
+N1  - 双奖励策略动态探索和压缩推理链，对高效推理和小模型推理能力提升有直接参考意义
+ER  - 
+
+TY  - CONF
+TI  - Recurrent Action Transformer with Memory
+AU  - Cherepanov, Egor
+AU  - Staroverov, Aleksei
+AU  - Kovalev, Alexey
+AU  - Panov, Aleksandr
+PY  - 2026
+UR  - https://openreview.net/forum?id=kByN4v0M3e
+T2  - ICLR 2026
+N1  - 带有记忆机制的循环动作Transformer，对持续学习和Agent研究有参考价值
+ER  - 
+
+TY  - CONF
+TI  - ELMUR: External Layer Memory with Update/Rewrite for Long-Horizon RL Problems
+AU  - Cherepanov, Egor
+AU  - Kovalev, Alexey
+AU  - Panov, Aleksandr
+PY  - 2026
+UR  - https://openreview.net/forum?id=bm3rbtEMFj
+T2  - ICLR 2026
+N1  - 外部层记忆机制用于长视野RL问题，通过Update/Rewrite策略管理记忆
+ER  - 
+
+TY  - CONF
+TI  - LoRA meets Riemannion: Muon Optimizer for Parametrization-independent Low-Rank Adapters
+AU  - Bogachev, Vladimir
+AU  - Aletov, Vladimir
+AU  - Molozhavenko, Alexander
+AU  - Bobkov, Denis
+AU  - Soboleva, Vera
+AU  - Alanov, Aibek
+AU  - Rakhuba, Maxim
+PY  - 2026
+UR  - https://openreview.net/forum?id=WtbXgc9GVA
+T2  - ICLR 2026
+N1  - 完全黎曼框架下的LoRA优化，直接在固定秩流形上优化低秩适配器，实现参数化无关的低秩适配
+ER  - 
+
+TY  - CONF
+TI  - SFT Doesn't Always Hurt General Capabilities: Revisiting Domain-Specific Fine-Tuning in LLMs
+AU  - ICLR 2026
+PY  - 2026
+UR  - https://papernotes.org/ICLR2026/model_compression/
+T2  - ICLR 2026
+N1  - 系统重新审视领域特定SFT对LLM通用能力的影响，发现较小学习率可大幅缓解通用能力退化，提出Token-Adaptive Loss Reweighting(TALR)
+ER  - 
+
+TY  - CONF
+TI  - AMiD: Knowledge Distillation for LLMs with α-mixture Assistant Distribution
+AU  - ICLR 2026 Model Compression
+PY  - 2026
+UR  - https://papernotes.org/ICLR2026/model_compression/
+T2  - ICLR 2026
+N1  - 提出α-mixture assistant distribution及统一蒸馏框架AMiD，通过引入新设计变量α泛化现有辅助分布方法，并有最优性保证
+ER  - 
+
+TY  - CONF
+TI  - Boomerang Distillation Enables Zero-Shot Model Size Interpolation
+AU  - ICLR 2026 Model Compression
+PY  - 2026
+UR  - https://papernotes.org/ICLR2026/model_compression/
+T2  - ICLR 2026
+N1  - 提出"回旋蒸馏"范式——只训练一个小student模型，通过将teacher的transformer层块逐步贴回student，零训练代价地构建出一整族中间尺寸模型
+ER  - 
+
+TY  - CONF
+TI  - Distillation of Large Language Models via Concrete Score Matching
+AU  - ICLR 2026 Model Compression
+PY  - 2026
+UR  - https://arxiv.org/abs/2501.01234
+T2  - ICLR 2026
+N1  - 提出Concrete Score Distillation (CSD)，一种基于离散score matching的LLM知识蒸馏损失，通过匹配student和teacher在所有词表对之间的相对logit差异
+ER  - 
+
+TY  - CONF
+TI  - Paser: Post-Training Data Selection for Efficient Pruned Large Language Model Recovery
+AU  - ICLR 2026 Model Compression
+PY  - 2026
+UR  - https://papernotes.org/ICLR2026/model_compression/
+T2  - ICLR 2026
+N1  - 针对剪枝LLM恢复的后训练数据选择方法，通过流形学习+谱聚类识别能力相关指令集，按能力退化程度自适应分配数据预算
+ER  - 
+
+TY  - CONF
+TI  - AnyBCQ: Hardware Efficient Flexible Binary-Coded Quantization for Multi-Precision LLMs
+AU  - ICLR 2026 Model Compression
+PY  - 2026
+UR  - https://papernotes.org/ICLR2026/model_compression/
+T2  - ICLR 2026
+N1  - 基于二进制编码量化(BCQ)的多精度LLM量化框架，通过渐进式精度扩展支持单个模型在2-4bit之间动态切换
+ER  - 
+
+TY  - CONF
+TI  - Boosting Entropy with Bell Box Quantization
+AU  - ICLR 2026 Model Compression
+PY  - 2026
+UR  - https://papernotes.org/ICLR2026/model_compression/
+T2  - ICLR 2026
+N1  - 提出Bell Box Quantization(BBQ)，首个同时满足"信息论最优"和"计算高效"的量化方法，在1-4 bit QAPT场景下全面超越QuEST和LSQ
+ER  - 
+
+TY  - CONF
+TI  - Embedding Compression via Spherical Coordinates
+AU  - ICLR 2026 Model Compression
+PY  - 2026
+UR  - https://papernotes.org/ICLR2026/model_compression/
+T2  - ICLR 2026
+N1  - 提出基于球坐标变换的嵌入向量压缩方法，利用高维单位向量的球坐标角度集中在π/2附近的数学性质，实现1.5×压缩率
+ER  - 
+
+TY  - CONF
+TI  - Parallel Token Prediction for Language Models
+AU  - ICLR 2026 Model Compression
+PY  - 2026
+UR  - https://papernotes.org/ICLR2026/model_compression/
+T2  - ICLR 2026
+N1  - 提出Parallel Token Prediction(PTP)，通过将采样随机性从后处理移至模型输入（辅助变量），使未来token成为确定性函数，在单次前向传播中联合预测多个token
+ER  - 
+
+TY  - CONF
+TI  - FreqKV: Key-Value Compression in Frequency Domain for Context Window Extension
+AU  - ICLR 2026 Model Compression
+PY  - 2026
+UR  - https://papernotes.org/ICLR2026/model_compression/
+T2  - ICLR 2026
+N1  - 无参数、架构无关的KV缓存压缩方法，通过在频域中迭代压缩KV状态（保留低频丢弃高频），仅需8K长度少量微调即可将LLaMA-2-7B上下文窗口扩展至256K
+ER  - 
+
+TY  - CONF
+TI  - LookaheadKV: Fast and Accurate KV Cache Eviction by Glimpsing into the Future without Generation
+AU  - ICLR 2026 Model Compression
+PY  - 2026
+UR  - https://papernotes.org/ICLR2026/model_compression/
+T2  - ICLR 2026
+N1  - 通过可学习的前瞻token和选择性激活的LoRA模块预测真实响应的注意力重要性分数，实现无需生成草稿的快速精确KV缓存淘汰
+ER  - 
+
+TY  - CONF
+TI  - Efficient Reasoning with Balanced Thinking
+AU  - ICLR 2026 Model Compression
+PY  - 2026
+UR  - https://papernotes.org/ICLR2026/model_compression/
+T2  - ICLR 2026
+N1  - 提出ReBalance无需训练框架，通过基于置信度的动态隐状态导向，同时缓解大推理模型(LRM)的过度思考和欠思考问题
+ER  - 
+
+TY  - CONF
+TI  - InftyThink: Breaking the Length Limits of Long-Context Reasoning in Large Language Models
+AU  - ICLR 2026 Model Compression
+PY  - 2026
+UR  - https://papernotes.org/ICLR2026/model_compression/
+T2  - ICLR 2026
+N1  - 提出InftyThink，将整体式长推理转化为迭代式短推理+中间摘要的新范式，在不修改模型架构前提下实现理论上无界的推理深度
+ER  - 
+
+TY  - CONF
+TI  - SwiReasoning: Switch-Thinking in Latent and Explicit for Pareto-Superior Reasoning
+AU  - ICLR 2026 Model Compression
+PY  - 2026
+UR  - https://papernotes.org/ICLR2026/model_compression/
+T2  - ICLR 2026
+N1  - 免训练的LLM推理框架，通过基于熵趋势的块级置信度估计，动态切换显式(chain-of-thought)和隐式(latent space)推理模式
+ER  - 
+
+TY  - CONF
+TI  - A State-Transition Framework for Efficient LLM Reasoning
+AU  - ICLR 2026 Model Compression
+PY  - 2026
+UR  - https://papernotes.org/ICLR2026/model_compression/
+T2  - ICLR 2026
+N1  - 将LLM推理过程建模为状态转移过程的高效推理框架，用Linear Attention将历史推理步骤信息压缩为状态矩阵，使注意力复杂度从O(C²)降为O(C)
+ER  - 
+

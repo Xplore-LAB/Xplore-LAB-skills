@@ -1,0 +1,46 @@
+============================================================
+OKC-SFT 参考文献导入 Zotero
+RIS: C:\Users\12286\.claude\skills\zotero-lit-import\scripts\CAC2026_OKC-SFT_refs.ris
+============================================================
+
+[Step 1] Creating collection hierarchy...
+  Created collection 'CAC2026_OKC-SFT_参考文献' -> NAPE7T9J
+  Created collection '1-LLM工业故障诊断微调' -> FRIQ4V5D
+  Created collection '2-知识引导领域LLM训练' -> 2ZCAXB3W
+  Created collection '3-空分装置AI优化' -> G49DX4AS
+  Created collection '4-流程行业LLM异常检测' -> X5JWUVUC
+  Created collection '5-结构化知识注入工业决策' -> 36X2KUPW
+  Created collection '6-工业基础模型' -> QNIA36RV
+Created 6/6 sub-collections
+
+[Step 2] Parsing RIS file...
+Parsed 18 papers from RIS
+
+[Step 3] Importing papers...
+  [1/18] OK -> 1-LLM工业故障诊断微调: Empirical Study on Fine-Tuning Pre-trained Large Language Models for Fault Diagn
+  [2/18] OK -> 1-LLM工业故障诊断微调: FaultGPT: Industrial Fault Diagnosis Question Answering System by Vision Languag
+  [3/18] OK -> 1-LLM工业故障诊断微调: S2S-FDD: Bridging Industrial Time Series and Natural Language for Explainable Ze
+  [4/18] OK -> 1-LLM工业故障诊断微调: Large Language Models for PHM: A Review of Optimization Techniques and Applicati
+  [5/18] OK -> 2-知识引导领域LLM训练: KG-SFT: Knowledge Graph-driven Supervised Fine-Tuning
+  [6/18] OK -> 2-知识引导领域LLM训练: IndustryGPT: A Large Language Model for Industrial Domain-Specific QA
+  [7/18] OK -> 2-知识引导领域LLM训练: GLaM: Fine-Tuning LLMs for Domain Knowledge Graph Alignment via Neighborhood Par
+  [8/18] OK -> 3-空分装置AI优化: Improving Extrapolation Capabilities of a Data-Driven Prediction Model for Contr
+  [9/18] OK -> 3-空分装置AI优化: End-to-End Reinforcement Learning of Koopman Models for eNMPC of an Air Separati
+  [10/18] OK -> 3-空分装置AI优化: Hierarchical RL-MPC for Demand Response Scheduling in ASUs
+  [11/18] OK -> 1-LLM工业故障诊断微调: Syn-Diag: LLM-based Synergistic Framework for Generalizable Few-shot Fault Diagn
+  [12/18] OK -> 4-流程行业LLM异常检测: Large Language Models as Explainable Cyberattack Detectors for Energy Industrial
+  [13/18] OK -> 4-流程行业LLM异常检测: ChemELLM: 70B LLM for Chemical Engineering
+  [14/18] OK -> 5-结构化知识注入工业决策: Fine-Tuned Thoughts: Leveraging Chain-of-Thought Reasoning for Industrial Asset 
+  [15/18] OK -> 5-结构化知识注入工业决策: Multi-Domain LLM Adaptation Using Synthetic Data at Shell
+  [16/18] OK -> 5-结构化知识注入工业决策: System-Aware Contextual Digital Twin for ICS Anomaly Diagnosis
+  [17/18] OK -> 6-工业基础模型: FactoryNet: A Large-Scale Dataset toward Industrial Time-Series Foundation Model
+  [18/18] OK -> 6-工业基础模型: Toward Epistemic Stability: Engineering Consistent Procedures for Industrial LLM
+
+============================================================
+IMPORT COMPLETE
+  Imported: 18
+  Skipped/Failed: 0
+  Total: 18
+  Parent: CAC2026_OKC-SFT_参考文献
+  Sub-collections: 6/6
+============================================================

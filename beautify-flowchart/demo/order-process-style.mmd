@@ -1,0 +1,39 @@
+%% Style模式：保持原布局，仅美化样式
+flowchart TD
+    A([客户下单]):::startEnd --> B{库存充足?}:::decision
+
+    B -->|否| C[通知缺货]:::warning
+    C --> D([结束]):::startEnd
+
+    B -->|是| E[锁定库存]:::process
+    E --> F[生成订单]:::process
+    F --> G{支付成功?}:::decision
+
+    G -->|否| H[支付失败]:::error
+    H --> I{重试次数<3?}:::decision
+    I -->|是| G
+    I -->|否| J[取消订单]:::error
+    J --> K[释放库存]:::process
+    K --> D
+
+    G -->|是| L[确认订单]:::success
+    L --> M[通知仓库]:::process
+    M --> N[打包发货]:::process
+    N --> O{配送完成?}:::decision
+
+    O -->|否| P[等待配送]:::io
+    P --> O
+
+    O -->|是| Q[客户签收]:::success
+    Q --> R[完成订单]:::success
+    R --> S[评价反馈]:::io
+    S --> D
+
+    %% 专业配色方案
+    classDef startEnd fill:#c8e6c9,stroke:#2e7d32,stroke-width:3px,color:#1b5e20,font-weight:bold
+    classDef process fill:#bbdefb,stroke:#1565c0,stroke-width:2px,color:#0d47a1
+    classDef decision fill:#fff9c4,stroke:#f9a825,stroke-width:2px,color:#f57f17,font-weight:bold
+    classDef io fill:#f8bbd9,stroke:#c62828,stroke-width:2px,color:#b71c1c
+    classDef success fill:#a5d6a7,stroke:#388e3c,stroke-width:3px,color:#1b5e20,font-weight:bold
+    classDef error fill:#ef9a9a,stroke:#d32f2f,stroke-width:2px,color:#c62828
+    classDef warning fill:#ffe0b2,stroke:#e65100,stroke-width:2px,color:#bf360c

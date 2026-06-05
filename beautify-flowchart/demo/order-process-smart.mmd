@@ -1,0 +1,78 @@
+%% Smart模式：智能分析后，针对性优化
+%% 分析：布局较乱，样式单一 → 使用both策略，重点优化布局和分组
+flowchart TD
+    subgraph Phase1 ["🛒 下单"]
+        A([开始]):::startEnd
+        B[客户下单]:::process
+        C{库存充足?}:::decision
+
+        A --> B
+        B --> C
+    end
+
+    subgraph Phase2 ["📦 库存"]
+        D[锁定库存]:::process
+        E[生成订单]:::process
+        F{支付成功?}:::decision
+
+        C -->|是| D
+        D --> E
+        E --> F
+    end
+
+    subgraph Phase3 ["💳 支付"]
+        G[支付失败]:::error
+        H{重试<3次?}:::decision
+        I[取消订单]:::error
+        J[确认订单]:::success
+
+        F -->|否| G
+        G --> H
+        H -->|是| F
+        H -->|否| I
+        F -->|是| J
+    end
+
+    subgraph Phase4 ["📦 发货"]
+        K[通知仓库]:::process
+        L[打包发货]:::process
+        M{配送完成?}:::decision
+
+        J --> K
+        K --> L
+        L --> M
+    end
+
+    subgraph Phase5 ["✅ 完成"]
+        N[客户签收]:::success
+        O[完成订单]:::success
+        P([结束]):::startEnd
+
+        M -->|是| N
+        N --> O
+        O --> P
+    end
+
+    %% 部分路径保持简单（智能优化重点）
+    C -->|否| Q[通知缺货]:::warning
+    Q --> P
+    I --> R[释放库存]:::process
+    R --> P
+    M -->|否| S[等待配送]:::io
+    S --> M
+
+    %% 专业配色，清晰区分
+    classDef startEnd fill:#10b981,stroke:#059669,stroke-width:3px,color:#fff,font-weight:bold
+    classDef process fill:#3b82f6,stroke:#2563eb,stroke-width:2px,color:#fff,font-weight:bold
+    classDef decision fill:#f59e0b,stroke:#d97706,stroke-width:2px,color:#fff,font-weight:bold
+    classDef io fill:#8b5cf6,stroke:#7c3aed,stroke-width:2px,color:#fff,font-weight:bold
+    classDef error fill:#ef4444,stroke:#dc2626,stroke-width:2px,color:#fff,font-weight:bold
+    classDef success fill:#06b6d4,stroke:#0891b2,stroke-width:3px,color:#fff,font-weight:bold
+    classDef warning fill:#f97316,stroke:#ea580c,stroke-width:2px,color:#fff,font-weight:bold
+
+    %% 子图样式
+    style Phase1 fill:#f0fdf4,stroke:#22c55e,stroke-width:2px,color:#166534
+    style Phase2 fill:#eff6ff,stroke:#3b82f6,stroke-width:2px,color:#1e40af
+    style Phase3 fill:#fef3c7,stroke:#f59e0b,stroke-width:2px,color:#92400e
+    style Phase4 fill:#f5f3ff,stroke:#8b5cf6,stroke-width:2px,color:#5b21b6
+    style Phase5 fill:#ecfdf5,stroke:#10b981,stroke-width:2px,color:#065f46

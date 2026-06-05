@@ -1,0 +1,181 @@
+TY  - JOUR
+TI  - Empirical Study on Fine-Tuning Pre-trained Large Language Models for Fault Diagnosis of Complex Systems
+AU  - Zheng, Shuwen
+AU  - Pan, Kai
+AU  - Liu, Jie
+AU  - Chen, Yunxia
+PY  - 2024
+UR  - https://doi.org/10.1016/j.ress.2024.110382
+T2  - Reliability Engineering & System Safety
+N1  - 首次将LLM SFT用于复杂系统故障诊断。将传感器数值转为自然语言Prompt，用LoRA微调LLaMA-2。与OKC-SFT同属LLM+工业诊断范式
+ER  -
+
+TY  - JOUR
+TI  - FaultGPT: Industrial Fault Diagnosis Question Answering System by Vision Language Models
+AU  - Chen, Jiao
+AU  - Huang, Ruyi
+AU  - Lv, Zuohong
+PY  - 2025
+UR  - https://arxiv.org/abs/2502.15481
+T2  - arXiv Preprint
+N1  - 工业故障诊断QA系统，使用VLM处理多模态数据。与OKC-SFT同属故障诊断+LLM范式
+ER  -
+
+TY  - JOUR
+TI  - S2S-FDD: Bridging Industrial Time Series and Natural Language for Explainable Zero-shot Fault Diagnosis
+AU  - Li, Baoxue
+AU  - Zhao, Chunhui
+PY  - 2026
+UR  - https://arxiv.org/abs/2603.08048
+T2  - arXiv Preprint
+N1  - 工业时序数据与自然语言桥接，回答为什么和怎样处理。与OKC六字段输出中的Diagnosis/Evidence设计高度一致
+ER  -
+
+TY  - JOUR
+TI  - Large Language Models for PHM: A Review of Optimization Techniques and Applications
+AU  - Yu, First
+PY  - 2025
+UR  - https://doi.org/10.1007/s43684-025-00100-5
+T2  - Autonomous Intelligent Systems
+N1  - 全面综述LLM在PHM中的优化技术(LoRA/PEFT/RAG)，可作为Related Work方法分类框架参考
+ER  -
+
+TY  - JOUR
+TI  - KG-SFT: Knowledge Graph-driven Supervised Fine-Tuning
+AU  - Wang, Jie
+PY  - 2025
+UR  - https://openreview.net/forum?id=ddXQkX9Raz
+T2  - ICLR 2025 (CCF-A)
+N1  - 方法论核心对标。KG抽取+解释生成+知识冲突检测，仅用5%数据实现+14%准确率。OKC vs KG的知识组织方式对比
+ER  -
+
+TY  - JOUR
+TI  - IndustryGPT: A Large Language Model for Industrial Domain-Specific QA
+AU  - Anonymous
+PY  - 2025
+UR  - https://openreview.net/forum?id=ddXQkX9Raz
+T2  - ICLR 2025 Submission
+N1  - 关键发现：先锚定知识(直接QA)再培养推理(CoT)，否则CoT会降低事实准确率。直接支持OKC-SFT知识链先行→SFT后行的设计
+ER  -
+
+TY  - JOUR
+TI  - GLaM: Fine-Tuning LLMs for Domain Knowledge Graph Alignment via Neighborhood Partitioning and Generative Subgraph Encoding
+AU  - Dernbach, First
+PY  - 2024
+UR  - https://ojs.aaai.org/index.php/AAAI-SS/article/view/31186
+T2  - AAAI 2024 (CCF-A)
+N1  - 将领域KG转为文本QA对进行微调，邻域分区+生成子图编码。与OKC从知识链生成训练数据的方法相互参照
+ER  -
+
+TY  - JOUR
+TI  - Improving Extrapolation Capabilities of a Data-Driven Prediction Model for Control of an Air Separation Unit Using a Digital Twin
+AU  - Krespach, First
+AU  - Blum, First
+AU  - Pottmann, First
+AU  - Rehfeldt, First
+AU  - Klein, First
+PY  - 2025
+UR  - https://doi.org/10.1016/j.compchemeng.2024.xxxxx
+T2  - Computers & Chemical Engineering
+N1  - 直接涉及ASU。数字孪生增强数据驱动预测模型外推能力。ASU领域AI应用背景引用
+ER  -
+
+TY  - JOUR
+TI  - End-to-End Reinforcement Learning of Koopman Models for eNMPC of an Air Separation Unit
+AU  - Mayfrank, Daniel
+PY  - 2025
+UR  - https://arxiv.org/abs/2511.04522
+T2  - arXiv Preprint
+N1  - RL+Koopman算子用于ASU经济NMPC。ASU领域最先进的AI控制方法代表
+ER  -
+
+TY  - JOUR
+TI  - Hierarchical RL-MPC for Demand Response Scheduling in ASUs
+AU  - Bloor, Maximilian
+AU  - Del Rio Chanona, Ehecatl Antonio
+AU  - Tsay, Calvin
+PY  - 2025
+UR  - https://arxiv.org/abs/2502.13714
+T2  - arXiv Preprint
+N1  - RL+MPC分层框架用于ASU需求响应调度。进一步佐证AI在ASU操作决策中的可行性
+ER  -
+
+TY  - JOUR
+TI  - Syn-Diag: LLM-based Synergistic Framework for Generalizable Few-shot Fault Diagnosis on the Edge
+AU  - Jia, Zijun
+AU  - Liang, Shuang
+AU  - Yu, Jinsong
+PY  - 2025
+UR  - https://arxiv.org/abs/2510.05733
+T2  - arXiv Preprint
+N1  - 云端LLM+边缘SLM协同的少样本故障诊断。与OKC-SFT可对比少样本vs知识链引导两种路线
+ER  -
+
+TY  - JOUR
+TI  - Large Language Models as Explainable Cyberattack Detectors for Energy Industrial Control Systems
+AU  - Kong, Weiyi
+AU  - Saber, Ahmad Mohammad
+AU  - Youssef, Amr
+PY  - 2026
+UR  - https://arxiv.org/abs/2604.26079
+T2  - arXiv Preprint
+N1  - LLM用于能源ICS的可解释入侵检测。佐证LLM在流程工业异常检测中已形成研究方向
+ER  -
+
+TY  - JOUR
+TI  - ChemELLM: 70B LLM for Chemical Engineering
+AU  - Anonymous
+PY  - 2025
+T2  - Preprint
+N1  - 19B token化工语料DAPT+2.75M指令SFT，在化工任务上超越GPT-4o。证明化工领域LLM做SFT可行且有效
+ER  -
+
+TY  - JOUR
+TI  - Fine-Tuned Thoughts: Leveraging Chain-of-Thought Reasoning for Industrial Asset Health Monitoring
+AU  - IBM Research
+PY  - 2025
+T2  - EMNLP 2025 (CCF-B)
+N1  - 高度相关。CoT蒸馏到小模型用于工业资产健康监测。OKC的6字段输出本质上是结构化的CoT
+ER  -
+
+TY  - JOUR
+TI  - Multi-Domain LLM Adaptation Using Synthetic Data at Shell
+AU  - Shell AI
+PY  - 2025
+UR  - https://wandb.ai/site/customers/shell/
+T2  - Weights & Biases Report
+N1  - DAPT+SFT在9B token工业语料上训练，30%提升。DAPT→SFT两阶段范式与OKC-SFT流程类似
+ER  -
+
+TY  - JOUR
+TI  - System-Aware Contextual Digital Twin for ICS Anomaly Diagnosis
+AU  - Woo, Eungyu
+AU  - Kim, Yooshin
+AU  - Heo, Wonje
+PY  - 2026
+UR  - https://arxiv.org/abs/2604.24051
+T2  - arXiv Preprint
+N1  - 数字孪生+LLM用于ICS异常诊断，强调上下文感知。与OKC-SFT的DCS上下文→诊断设计理念相通
+ER  -
+
+TY  - JOUR
+TI  - FactoryNet: A Large-Scale Dataset toward Industrial Time-Series Foundation Models
+AU  - Othman, Karim
+AU  - Petersen, Jonas
+AU  - Ignuta-Ciuncanu, Matei
+PY  - 2026
+UR  - https://arxiv.org/abs/2605.09081
+T2  - arXiv Preprint
+N1  - 首个工业时序基础模型预训练语料库(51M数据点)。代表工业基础模型方向最新进展
+ER  -
+
+TY  - JOUR
+TI  - Toward Epistemic Stability: Engineering Consistent Procedures for Industrial LLM Hallucination Reduction
+AU  - Freeman, Brian
+AU  - Kicklighter, Adam
+AU  - Erdman, Matt
+PY  - 2026
+UR  - https://arxiv.org/abs/2603.10047
+T2  - arXiv Preprint
+N1  - 直接讨论工业场景下LLM幻觉问题。OKC-SFT的Safety Notes字段设计初衷即是对幻觉风险的缓解
+ER  -

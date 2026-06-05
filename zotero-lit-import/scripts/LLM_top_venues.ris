@@ -1,0 +1,918 @@
+TY  - JOUR
+TI  - Attention Is All You Need
+AU  - Vaswani, Ashish
+AU  - Shazeer, Noam
+AU  - Parmar, Niki
+AU  - Uszkoreit, Jakob
+AU  - Jones, Llion
+AU  - Gomez, Aidan N.
+AU  - Kaiser, Lukasz
+AU  - Polosukhin, Illia
+PY  - 2017
+UR  - https://arxiv.org/abs/1706.03762
+T2  - NeurIPS 2017
+N1  - Transformer架构开山之作，引入自注意力机制替代循环和卷积，奠定GPT/BERT等所有现代LLM的基础。被引超10万次。
+ER  -
+
+TY  - JOUR
+TI  - Language Models are Few-Shot Learners (GPT-3)
+AU  - Brown, Tom B.
+AU  - Mann, Benjamin
+AU  - Ryder, Nick
+AU  - Subbiah, Melanie
+AU  - Kaplan, Jared
+AU  - Dhariwal, Prafulla
+AU  - Neelakantan, Arvind
+AU  - Shyam, Pranav
+AU  - Sastry, Girish
+AU  - Askell, Amanda
+AU  - Agarwal, Sandhini
+AU  - Herbert-Voss, Ariel
+AU  - Krueger, Gretchen
+AU  - Henighan, Tom
+AU  - Child, Rewon
+AU  - Ramesh, Aditya
+AU  - Ziegler, Daniel M.
+AU  - Wu, Jeffrey
+AU  - Winter, Clemens
+AU  - Hesse, Christopher
+AU  - Chen, Mark
+AU  - Sigler, Eric
+AU  - Litwin, Mateusz
+AU  - Gray, Scott
+AU  - Chess, Benjamin
+AU  - Clark, Jack
+AU  - Berner, Christopher
+AU  - McCandlish, Sam
+AU  - Radford, Alec
+AU  - Sutskever, Ilya
+AU  - Amodei, Dario
+PY  - 2020
+UR  - https://arxiv.org/abs/2005.14165
+T2  - NeurIPS 2020 (Oral)
+N1  - 175B参数GPT-3展示规模化涌现的少样本学习能力，无需微调即可在多种NLP任务上达到SOTA，开启大模型时代。
+ER  -
+
+TY  - JOUR
+TI  - LoRA: Low-Rank Adaptation of Large Language Models
+AU  - Hu, Edward J.
+AU  - Shen, Yelong
+AU  - Wallis, Phillip
+AU  - Allen-Zhu, Zeyuan
+AU  - Li, Yuanzhi
+AU  - Wang, Shean
+AU  - Wang, Lu
+AU  - Chen, Weizhu
+PY  - 2022
+UR  - https://arxiv.org/abs/2106.09685
+T2  - ICLR 2022
+N1  - 提出低秩分解微调方法LoRA，冻结预训练权重，仅训练低秩矩阵，减少GPT-3 175B可训练参数1万倍。PEFT领域里程碑。
+ER  -
+
+TY  - JOUR
+TI  - Chain-of-Thought Prompting Elicits Reasoning in Large Language Models
+AU  - Wei, Jason
+AU  - Wang, Xuezhi
+AU  - Schuurmans, Dale
+AU  - Bosma, Maarten
+AU  - Ichter, Brian
+AU  - Xia, Fei
+AU  - Chi, Ed H.
+AU  - Le, Quoc V.
+AU  - Zhou, Denny
+PY  - 2022
+UR  - https://arxiv.org/abs/2201.11903
+T2  - NeurIPS 2022
+N1  - 发现思维链推理是大模型的涌现能力。PaLM 540B + 8个CoT示例在GSM8K达到SOTA。被引超16000次，开创推理增强范式。
+ER  -
+
+TY  - JOUR
+TI  - Training Compute-Optimal Large Language Models (Chinchilla)
+AU  - Hoffmann, Jordan
+AU  - Borgeaud, Sebastian
+AU  - Mensch, Arthur
+AU  - Buchatskaya, Elena
+AU  - Cai, Trevor
+AU  - Rutherford, Eliza
+AU  - Casas, Diego de Las
+AU  - Hendricks, Lisa Anne
+AU  - Welbl, Johannes
+AU  - Clark, Aidan
+AU  - Hennigan, Tom
+AU  - Noland, Eric
+AU  - Millican, Katie
+AU  - Driessche, George van den
+AU  - Damoc, Bogdan
+AU  - Guy, Aurelia
+AU  - Osindero, Simon
+AU  - Simonyan, Karen
+AU  - Elsen, Erich
+AU  - Rae, Jack W.
+AU  - Vinyals, Oriol
+AU  - Sifre, Laurent
+PY  - 2022
+UR  - https://arxiv.org/abs/2203.15556
+T2  - NeurIPS 2022
+N1  - 提出Chinchilla缩放定律：模型大小和训练数据应等比缩放。70B Chinchilla用相同算力超越280B Gopher。颠覆Kaplan缩放定律。
+ER  -
+
+TY  - JOUR
+TI  - Training Language Models to Follow Instructions with Human Feedback (InstructGPT)
+AU  - Ouyang, Long
+AU  - Wu, Jeffrey
+AU  - Jiang, Xu
+AU  - Almeida, Diogo
+AU  - Wainwright, Carroll
+AU  - Mishkin, Pamela
+AU  - Zhang, Chong
+AU  - Agarwal, Sandhini
+AU  - Slama, Katarina
+AU  - Ray, Alex
+AU  - Schulman, John
+AU  - Hilton, Jacob
+AU  - Kelton, Fraser
+AU  - Miller, Luke
+AU  - Simens, Maddie
+AU  - Askell, Amanda
+AU  - Welinder, Peter
+AU  - Christiano, Paul F.
+AU  - Leike, Jan
+AU  - Lowe, Ryan
+PY  - 2022
+UR  - https://arxiv.org/abs/2203.02155
+T2  - NeurIPS 2022
+N1  - 提出RLHF三阶段训练：SFT+奖励模型+PPO。1.3B InstructGPT人类偏好超越175B GPT-3。ChatGPT的技术基础。
+ER  -
+
+TY  - JOUR
+TI  - FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness
+AU  - Dao, Tri
+AU  - Fu, Daniel Y.
+AU  - Ermon, Stefano
+AU  - Rudra, Atri
+AU  - Ré, Christopher
+PY  - 2022
+UR  - https://arxiv.org/abs/2205.14135
+T2  - NeurIPS 2022
+N1  - IO感知的精确注意力算法，通过Tiling和重计算避免物化注意力矩阵。GPT-2加速3倍，内存线性增长。已被PyTorch/HuggingFace广泛集成。
+ER  -
+
+TY  - JOUR
+TI  - Direct Preference Optimization: Your Language Model is Secretly a Reward Model
+AU  - Rafailov, Rafael
+AU  - Sharma, Archit
+AU  - Mitchell, Eric
+AU  - Ermon, Stefano
+AU  - Manning, Christopher D.
+AU  - Finn, Chelsea
+PY  - 2023
+UR  - https://arxiv.org/abs/2305.18290
+T2  - NeurIPS 2023 (Outstanding Runner-Up) / ICML 2023
+N1  - 绕过显式奖励模型训练和RL，直接通过分类损失从偏好数据优化策略。替代RLHF的标准方法，被LLaMA 3等广泛采用。
+ER  -
+
+TY  - JOUR
+TI  - QLoRA: Efficient Finetuning of Quantized LLMs
+AU  - Dettmers, Tim
+AU  - Pagnoni, Artidoro
+AU  - Holtzman, Ari
+AU  - Zettlemoyer, Luke
+PY  - 2023
+UR  - https://arxiv.org/abs/2305.14314
+T2  - NeurIPS 2023 (Oral)
+N1  - 4-bit量化LoRA：通过NF4量化、双重量化和分页优化器，在单张48GB GPU上微调65B模型。Guanaco达到ChatGPT 99.3%性能。
+ER  -
+
+TY  - JOUR
+TI  - Tree of Thoughts: Deliberate Problem Solving with Large Language Models
+AU  - Yao, Shunyu
+AU  - Yu, Dian
+AU  - Zhao, Jeffrey
+AU  - Shafran, Izhak
+AU  - Griffiths, Thomas L.
+AU  - Cao, Yuan
+AU  - Narasimhan, Karthik
+PY  - 2023
+UR  - https://arxiv.org/abs/2305.10601
+T2  - NeurIPS 2023 (Oral)
+N1  - 推广CoT为树状搜索：允许LLM探索多条推理路径、回溯和前瞻。在Game of 24上从4%提升到74%，开创LLM搜索推理范式。
+ER  -
+
+TY  - JOUR
+TI  - Are Emergent Abilities of Large Language Models a Mirage?
+AU  - Schaeffer, Rylan
+AU  - Miranda, Brando
+AU  - Koyejo, Sanmi
+PY  - 2023
+UR  - https://arxiv.org/abs/2304.15004
+T2  - NeurIPS 2023 (Outstanding Paper Award)
+N1  - 论证LLM的"涌现能力"是非线性/不连续评估指标的伪影，而非模型基本属性。引发对涌现现象本质的广泛讨论。
+ER  -
+
+TY  - JOUR
+TI  - Scaling Data-Constrained Language Models
+AU  - Muennighoff, Niklas
+AU  - Rush, Alexander M.
+AU  - Barak, Boaz
+AU  - Scao, Teven Le
+AU  - Tazi, Nouamane
+AU  - Piktus, Aleksandra
+AU  - Pyysalo, Sampo
+AU  - Wolf, Thomas
+AU  - Raffel, Colin
+PY  - 2023
+UR  - https://arxiv.org/abs/2305.16264
+T2  - NeurIPS 2023 (Outstanding Runner-Up)
+N1  - 数据受限场景下的缩放定律：最多4轮重复≈唯一数据，添加代码数据可加倍有效token。指导数据稀缺时的训练策略。
+ER  -
+
+TY  - JOUR
+TI  - ReAct: Synergizing Reasoning and Acting in Language Models
+AU  - Yao, Shunyu
+AU  - Zhao, Jeffrey
+AU  - Yu, Dian
+AU  - Du, Nan
+AU  - Shafran, Izhak
+AU  - Narasimhan, Karthik R.
+AU  - Cao, Yuan
+PY  - 2023
+UR  - https://arxiv.org/abs/2210.03629
+T2  - ICLR 2023
+N1  - 将推理(CoT)和行动(工具调用)交织，提升LLM在知识密集型任务和交互式决策中的表现。Agent领域的开创性工作。
+ER  -
+
+TY  - JOUR
+TI  - GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding
+AU  - Lepikhin, Dmitry
+AU  - Lee, HyoukJoong
+AU  - Xu, Yuanzhong
+AU  - Chen, Dehao
+AU  - Firat, Orhan
+AU  - Huang, Yanping
+AU  - Krikun, Maxim
+AU  - Shazeer, Noam
+AU  - Chen, Zhifeng
+PY  - 2021
+UR  - https://arxiv.org/abs/2006.16668
+T2  - ICLR 2021
+N1  - 将MoE扩展到600B参数（每次仅激活少量），提出自动分片技术。Google MoE大模型的基础架构。
+ER  -
+
+TY  - JOUR
+TI  - Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity
+AU  - Fedus, William
+AU  - Zoph, Barret
+AU  - Shazeer, Noam
+PY  - 2022
+UR  - https://arxiv.org/abs/2101.03961
+T2  - JMLR 2022 (presented at NeurIPS)
+N1  - 简化MoE为Switch Routing(Top-1)，将模型扩展到1.6T参数。证明稀疏模型在相同算力下优于稠密模型。
+ER  -
+
+TY  - JOUR
+TI  - Mixtral of Experts
+AU  - Jiang, Albert Q.
+AU  - Sablayrolles, Alexandre
+AU  - Roux, Antoine
+AU  - Mensch, Arthur
+AU  - Savary, Blanche
+AU  - Bamford, Chris
+AU  - Chaplot, Devendra Singh
+AU  - Casas, Diego de las
+AU  - Hanna, Emma Bou
+AU  - Bressand, Florian
+AU  - Lengyel, Gianna
+AU  - Bour, Guillaume
+AU  - Lample, Guillaume
+AU  - Lavaud, Lucia Renée
+AU  - Saulnier, Lucile
+AU  - Lachaux, Marie-Anne
+AU  - Stock, Pierre
+AU  - Subramanian, Sandeep
+AU  - Yang, Sophia
+AU  - Antoniak, Szymon
+AU  - Scao, Teven Le
+AU  - Gervet, Théophile
+AU  - Lavril, Thibaut
+AU  - Wang, Thomas
+AU  - Lacroix, Timothée
+AU  - Sayed, William El
+PY  - 2024
+UR  - https://arxiv.org/abs/2401.04088
+T2  - NeurIPS 2024
+N1  - 稀疏MoE 8x7B模型：47B总参数量，每token仅激活13B。性能匹敌LLaMA 2 70B，推理效率大幅提升。Apache 2.0开源。
+ER  -
+
+TY  - JOUR
+TI  - Visual Autoregressive Modeling: Scalable Image Generation via Next-Scale Prediction
+AU  - Tian, Keyu
+AU  - Jiang, Yi
+AU  - Yuan, Zehuan
+AU  - Peng, Bingyue
+AU  - Wang, Liwei
+PY  - 2024
+UR  - https://arxiv.org/abs/2404.02905
+T2  - NeurIPS 2024 (Best Paper)
+N1  - 将LLM的自回归范式重新定义为"下一尺度预测"，在图像生成中展现出清晰的幂律缩放定律(r²≈0.998)，扩散模型的有力竞争者。
+ER  -
+
+TY  - JOUR
+TI  - Not All Tokens Are What You Need for Pre-training (Rho-1)
+AU  - Lin, Zhenghao
+AU  - Gou, Zhibin
+AU  - Gong, Yeyun
+AU  - Liu, Xiao
+AU  - Shen, Yelong
+AU  - Xu, Ruochen
+AU  - Lin, Chen
+AU  - Yang, Yujiu
+AU  - Jiao, Jian
+AU  - Duan, Nan
+AU  - Chen, Weizhu
+PY  - 2024
+UR  - https://arxiv.org/abs/2404.07965
+T2  - NeurIPS 2024 (Oral Best Paper Runner-Up)
+N1  - 提出选择性语言建模(SLM)：仅对"有用"token进行训练。仅用3%预训练token达到DeepSeekMath的全量训练性能。
+ER  -
+
+TY  - JOUR
+TI  - Aligner: Efficient Alignment by Learning to Correct
+AU  - Ji, Jiaming
+AU  - Chen, Boyuan
+AU  - Lou, Hantao
+AU  - Hong, Donghai
+AU  - Zhang, Borong
+AU  - Pan, Xuehai
+AU  - Dai, Juntao
+AU  - Tianyi, Qiu
+AU  - Yang, Yaodong
+PY  - 2024
+UR  - https://arxiv.org/abs/2402.02416
+T2  - NeurIPS 2024 (Oral)
+N1  - 模型无关的轻量级对齐模块，通过学习修正LLM输出来提升对齐。跨11个LLM平均提升68.9%的有用性。
+ER  -
+
+TY  - JOUR
+TI  - Weak-to-Strong Generalization: Eliciting Strong Capabilities with Weak Supervision
+AU  - Burns, Collin
+AU  - Izmailov, Pavel
+AU  - Kirchner, Jan Hendrik
+AU  - Baker, Bowen
+AU  - Gao, Leo
+AU  - Aschenbrenner, Leopold
+AU  - Chen, Yining
+AU  - Ecoffet, Adrien
+AU  - Joglekar, Manas
+AU  - Leike, Jan
+AU  - Sutskever, Ilya
+AU  - Wu, Jeff
+PY  - 2024
+UR  - https://arxiv.org/abs/2312.09390
+T2  - ICML 2024 (Best Paper)
+N1  - 解决超对齐核心问题：弱模型监督能否激发强模型的全部能力？为未来超人类AI对齐奠定理论基础。OpenAI Superalignment团队。
+ER  -
+
+TY  - JOUR
+TI  - Stealing Part of a Production Language Model
+AU  - Carlini, Nicholas
+AU  - Paleka, Daniel
+AU  - Dvijotham, Krishnamurthy
+AU  - Steinke, Thomas
+AU  - Hayase, Jonathan
+AU  - Cooper, A. Feder
+AU  - Lee, Katherine
+AU  - Jagielski, Matthew
+AU  - Nasr, Milad
+AU  - Conmy, Arthur
+AU  - Wallace, Eric
+AU  - Rolnick, David
+AU  - Tramèr, Florian
+PY  - 2024
+UR  - https://arxiv.org/abs/2403.00534
+T2  - ICML 2024 (Best Paper)
+N1  - 首个针对黑盒生产LLM的模型窃取攻击，花费不到20美元即可精确提取ChatGPT/PaLM-2的嵌入层参数。
+ER  -
+
+TY  - JOUR
+TI  - Chatbot Arena: An Open Platform for Evaluating LLMs by Human Preference
+AU  - Chiang, Wei-Lin
+AU  - Zheng, Lianmin
+AU  - Sheng, Ying
+AU  - Angelopoulos, Anastasios Nikolas
+AU  - Li, Tianle
+AU  - Li, Dacheng
+AU  - Zhang, Hao
+AU  - Zhu, Banghua
+AU  - Jordan, Michael I.
+AU  - Gonzalez, Joseph E.
+AU  - Stoica, Ion
+PY  - 2024
+UR  - https://arxiv.org/abs/2403.04132
+T2  - ICML 2024 (Best Paper)
+N1  - 推出LMSYS Chatbot Arena：基于人类偏好的众包LLM评估平台。已成为衡量LLM性能的行业标准。
+ER  -
+
+TY  - JOUR
+TI  - DoRA: Weight-Decomposed Low-Rank Adaptation
+AU  - Liu, Shih-Yang
+AU  - Wang, Chien-Yi
+AU  - Yin, Hongxu
+AU  - Molchanov, Pavlo
+AU  - Wang, Yu-Chiang Frank
+AU  - Cheng, Kwang-Ting
+AU  - Chen, Min-Hung
+PY  - 2024
+UR  - https://arxiv.org/abs/2402.09353
+T2  - ICML 2024 (Best Paper)
+N1  - 将权重分解为幅度和方向，仅对方向组件做LoRA。在保持LoRA效率的同时，学习能力更接近全量微调。
+ER  -
+
+TY  - JOUR
+TI  - Better & Faster Large Language Models via Multi-token Prediction
+AU  - Gloeckle, Fabian
+AU  - Idrissi, Badr Youbi
+AU  - Rozière, Baptiste
+AU  - Lopez-Paz, David
+AU  - Synnaeve, Gabriel
+PY  - 2024
+UR  - https://arxiv.org/abs/2404.19737
+T2  - ICML 2024
+N1  - 训练LLM同时预测多个未来token，提升样本效率和推理速度。Meta FAIR工作，被大量后续研究引用。
+ER  -
+
+TY  - JOUR
+TI  - Debating with More Persuasive LLMs Leads to More Truthful Answers
+AU  - Khan, Akbir
+AU  - Hughes, John
+AU  - Valentine, Dan
+AU  - Ruis, Laura
+AU  - Sachan, Kshitij
+AU  - Radhakrishnan, Ansh
+AU  - Grefenstette, Edward
+AU  - Bowman, Samuel R.
+AU  - Rocktäschel, Tim
+AU  - Perez, Ethan
+PY  - 2024
+UR  - https://arxiv.org/abs/2402.08782
+T2  - ICML 2024 (Best Paper)
+N1  - 证明LLM辩论提升真实性：非专家模型通过辩论判断专家模型更准确的答案。Anthropic关于可扩展监督的代表作。
+ER  -
+
+TY  - JOUR
+TI  - Scaling Laws for Fine-Grained Mixture of Experts
+AU  - Ludziejewski, Jan
+AU  - Krajewski, Jakub
+AU  - Adamczewski, Kamil
+AU  - Piórkowski, Maciej
+AU  - Krutul, Michał
+AU  - Antoniak, Szymon
+AU  - Ciebiera, Kamil
+AU  - Król, Krystian
+AU  - Odrzygóźdź, Tomasz
+AU  - Sankowski, Piotr
+AU  - Cygan, Marek
+AU  - Jaszczur, Sebastian
+PY  - 2024
+UR  - https://arxiv.org/abs/2402.07864
+T2  - ICML 2024
+N1  - 引入MoE"粒度"这一新超参数，推导细粒度MoE的缩放定律。证明稠密与MoE模型的效率差距随规模增长而扩大。
+ER  -
+
+TY  - JOUR
+TI  - Discrete Diffusion Modeling by Estimating the Ratios of the Data Distribution (SEDD)
+AU  - Lou, Aaron
+AU  - Meng, Chenlin
+AU  - Ermon, Stefano
+PY  - 2024
+UR  - https://arxiv.org/abs/2310.16834
+T2  - ICML 2024 (Best Paper)
+N1  - 提出SEDD离散扩散模型，在语言建模上超越GPT-2。开辟了扩散模型用于文本生成的新方向。
+ER  -
+
+TY  - JOUR
+TI  - RLAIF vs. RLHF: Scaling Reinforcement Learning from Human Feedback with AI Feedback
+AU  - Lee, Harrison
+AU  - Phatale, Samrat
+AU  - Mansoor, Hassan
+AU  - Mesnard, Thomas
+AU  - Ferret, Johan
+AU  - Lu, Kellie
+AU  - Bishop, Colton
+AU  - Hall, Ethan
+AU  - Carbune, Victor
+AU  - Rastogi, Abhinav
+PY  - 2024
+UR  - https://arxiv.org/abs/2309.00267
+T2  - ICML 2024
+N1  - 系统对比RLAIF与RLHF，证明AI反馈可达到人类反馈相当的对齐效果，为可扩展对齐提供关键证据。
+ER  -
+
+TY  - JOUR
+TI  - Medusa: Simple LLM Inference Acceleration with Multiple Decoding Heads
+AU  - Cai, Tianle
+AU  - Li, Yuhong
+AU  - Geng, Zhengyang
+AU  - Peng, Hongwu
+AU  - Lee, Jason D.
+AU  - Chen, Deming
+AU  - Dao, Tri
+PY  - 2024
+UR  - https://arxiv.org/abs/2401.10774
+T2  - ICML 2024
+N1  - 添加多个解码头同时预测多个token，无需草稿模型即可实现推测解码加速。简洁高效的推理加速方案。
+ER  -
+
+TY  - JOUR
+TI  - How Language Model Hallucinations Can Snowball
+AU  - Zhang, Muru
+AU  - Press, Ofir
+AU  - Merrill, William
+AU  - Liu, Alisa
+AU  - Smith, Noah A.
+PY  - 2024
+UR  - https://arxiv.org/abs/2305.13534
+T2  - ICML 2024
+N1  - 发现幻觉会雪崩式累积：早期一个错误会诱发后续更多错误。揭示LLM生成中错误传播的机制。
+ER  -
+
+TY  - JOUR
+TI  - Fine-tuning Aligned Language Models Compromises Safety, Even When Users Do Not Intend To!
+AU  - Qi, Xiangyu
+AU  - Zeng, Yi
+AU  - Xie, Tinghao
+AU  - Chen, Pin-Yu
+AU  - Jia, Ruoxi
+AU  - Mittal, Prateek
+AU  - Henderson, Peter
+PY  - 2024
+UR  - https://arxiv.org/abs/2310.03693
+T2  - ICLR 2024 (Oral)
+N1  - 揭示即使良性微调也会破坏LLM安全对齐。10个对抗样本不到0.20美元即可越狱GPT-3.5 Turbo。安全领域里程碑。
+ER  -
+
+TY  - JOUR
+TI  - Vision Transformers Need Registers
+AU  - Darcet, Timothée
+AU  - Oquab, Maxime
+AU  - Mairal, Julien
+AU  - Bojanowski, Piotr
+PY  - 2024
+UR  - https://arxiv.org/abs/2309.16588
+T2  - ICLR 2024 (Outstanding Paper)
+N1  - 发现ViT特征图中的伪影并提出Register Token解决方案，直接提升DINOv2等模型性能。
+ER  -
+
+TY  - JOUR
+TI  - MetaGPT: Meta Programming for Multi-Agent Collaborative Framework
+AU  - Hong, Sirui
+AU  - Zhuge, Mingchen
+AU  - Chen, Jonathan
+AU  - Zheng, Xiawu
+AU  - Cheng, Yuheng
+AU  - Zhang, Ceyao
+AU  - Wang, Jinlin
+AU  - Wang, Zili
+AU  - Yau, Steven Ka Wai
+AU  - Lin, Zijian
+AU  - Yang, Liyuan
+AU  - Ran, Chenyu
+AU  - Xiao, Lingfeng
+AU  - Wu, Chenglin
+AU  - Schmidhuber, Jürgen
+PY  - 2024
+UR  - https://arxiv.org/abs/2308.00352
+T2  - ICLR 2024 (Oral)
+N1  - 用SOPs(标准操作流程)编码人类编程协作模式，多Agent LLM自主完成复杂编程任务。多智能体协作的代表作。
+ER  -
+
+TY  - JOUR
+TI  - SWE-bench: Can Language Models Resolve Real-world GitHub Issues?
+AU  - Jimenez, Carlos E.
+AU  - Yang, John
+AU  - Wettig, Alexander
+AU  - Yao, Shunyu
+AU  - Pei, Kexin
+AU  - Press, Ofir
+AU  - Narasimhan, Karthik R.
+PY  - 2024
+UR  - https://arxiv.org/abs/2310.06770
+T2  - ICLR 2024 (Oral)
+N1  - 评估LLM解决真实GitHub Issue的基准测试。已成为衡量LLM编程能力的事实标准。
+ER  -
+
+TY  - JOUR
+TI  - Safety Alignment Should Be Made More Than Just a Few Tokens Deep
+AU  - Qi, Xiangyu
+AU  - Panda, Ashwinee
+AU  - Lyu, Kaifeng
+AU  - Ma, Xiao
+AU  - Roy, Subhrajit
+AU  - Beirami, Ahmad
+AU  - Mittal, Prateek
+AU  - Henderson, Peter
+PY  - 2025
+UR  - https://openreview.net/forum?id=6Mxhg9PtDE
+T2  - ICLR 2025 (Outstanding Paper Award)
+N1  - 发现当前安全对齐仅在前几个token做表面功夫，提出VDSA+FTR深化安全对齐。对抗后缀/预填充/微调攻击显著提升鲁棒性。
+ER  -
+
+TY  - JOUR
+TI  - Learning Dynamics of LLM Finetuning
+AU  - Ren, Yi
+AU  - Sutherland, Danica J.
+PY  - 2025
+UR  - https://openreview.net/forum?id=tPNHOoZFl9
+T2  - ICLR 2025 (Outstanding Paper Award)
+N1  - 通过学习动力学揭示微调中幻觉放大现象和DPO的"挤压效应"。提出改进对齐的简单有效方法。
+ER  -
+
+TY  - JOUR
+TI  - AlphaEdit: Null-Space Constrained Model Editing for Language Models
+AU  - Fang, Junfeng
+AU  - Jiang, Houcheng
+AU  - Wang, Kun
+AU  - Ma, Yunshan
+AU  - Shi, Jie
+AU  - Wang, Xiang
+AU  - He, Xiangnan
+AU  - Chua, Tat-Seng
+PY  - 2025
+UR  - https://openreview.net/forum?id=HvSytvg3Jh
+T2  - ICLR 2025 (Outstanding Paper Award)
+N1  - 将参数扰动投影到零空间保护已有知识，仅需一行代码平均提升36.7%的知识编辑性能。
+ER  -
+
+TY  - JOUR
+TI  - Scaling Laws for Precision
+AU  - Kumar, Tanishq
+AU  - An, Zachary
+AU  - Bornschein, Jorg
+AU  - Braverman, Vladimir
+AU  - Mozer, Michael C.
+AU  - Poole, Ben
+PY  - 2025
+UR  - https://arxiv.org/abs/2411.04330
+T2  - ICLR 2025 (Oral)
+N1  - 将缩放定律推广到低精度训练/推理：低精度等效于减少有效参数量。465+次训练实验验证。
+ER  -
+
+TY  - JOUR
+TI  - Faster Cascades via Speculative Decoding
+AU  - Narasimhan, Harikrishna
+AU  - Gontijo-Lopes, Raphael
+AU  - Zhou, Yanqi
+AU  - Garg, Navdeep
+AU  - Jitkrittum, Wittawat
+AU  - Datta, Trishul
+AU  - Moyer, Daniel
+AU  - Das, Payel
+AU  - Sercu, Tom
+PY  - 2025
+UR  - https://arxiv.org/abs/2410.06916
+T2  - ICLR 2025 (Honorable Mention)
+N1  - 将级联(cost-quality trade-off)与推测解码(speed-up)融合为推测级联，在Gemma/T5上验证。
+ER  -
+
+TY  - JOUR
+TI  - Self-Improvement in Language Models: The Sharpening Mechanism
+AU  - Huang, Audrey
+AU  - Chen, Yudong
+AU  - Plevrakis, Orestis
+AU  - Arora, Sanjeev
+PY  - 2025
+UR  - https://arxiv.org/abs/2410.08629
+T2  - ICLR 2025 (Oral)
+N1  - 揭示LLM自我改进的"锐化机制"：生成与评判能力间的差距推动质量提升。为自我对齐提供理论解释。
+ER  -
+
+TY  - JOUR
+TI  - Reasoning with Latent Thoughts: On the Power of Looped Transformers
+AU  - Saunshi, Nikunj
+AU  - Plevrakis, Orestis
+AU  - Arora, Sanjeev
+AU  - Koyejo, Sanmi
+PY  - 2025
+UR  - https://arxiv.org/abs/2410.07046
+T2  - ICLR 2025
+N1  - 证明k层Transformer循环L次≈kL层非循环模型，深度比参数更重要。循环模型可用潜在思维模拟CoT。
+ER  -
+
+TY  - JOUR
+TI  - Lean-STaR: Learning to Interleave Thinking and Proving
+AU  - Lin, Haohan
+AU  - Sun, Zhiqing
+AU  - Welleck, Sean
+AU  - Yang, Yiming
+PY  - 2025
+UR  - https://arxiv.org/abs/2407.10040
+T2  - ICLR 2025 (Spotlight)
+N1  - 在形式化证明(Lean)中交错非正式推理与形式化证明步骤，显著提升定理证明成功率。LLM+定理证明的标杆。
+ER  -
+
+TY  - JOUR
+TI  - Mind the Gap: Examining the Self-Improvement Capabilities of Large Language Models
+AU  - Song, Yuda
+AU  - Zhang, Hanlin
+AU  - Finzi, Marc
+AU  - Wilson, Andrew Gordon
+PY  - 2025
+UR  - https://arxiv.org/abs/2411.01927
+T2  - ICLR 2025 (Oral)
+N1  - 发现生成-验证能力差(generation-verification gap)是自我改进的核心瓶颈，该差距随预训练算力一致缩放。
+ER  -
+
+TY  - JOUR
+TI  - Backtracking Improves Generation Safety
+AU  - Zhang, Yiming
+AU  - Chi, Jianfeng
+AU  - Nguyen, Hailey
+AU  - Upasani, Kartikeya
+AU  - Bikel, Daniel
+AU  - Weston, Jason
+AU  - Smith, Eric
+PY  - 2025
+UR  - https://arxiv.org/abs/2409.14586
+T2  - ICLR 2025 (Oral)
+N1  - 训练LLM使用[RESET] token回溯撤销不安全文本，无需牺牲有用性即可实现自我纠正。
+ER  -
+
+TY  - JOUR
+TI  - How Do Large Language Monkeys Get Their Power (Laws)?
+AU  - Chen, Lingjiao
+AU  - Zaharia, Matei
+AU  - Zou, James
+PY  - 2025
+UR  - https://arxiv.org/abs/2502.04082
+T2  - ICML 2025 (Oral)
+N1  - 解释为何LLM聚合成功率呈幂律分布：问题难度的重尾分布导致。为LLM基准评估提供理论框架。
+ER  -
+
+TY  - JOUR
+TI  - The Geometry of Refusal in Large Language Models: Concept Cones and Representational Independence
+AU  - Arditi, Andy
+AU  - Obeso, Oscar
+AU  - Nanda, Neel
+AU  - Templeton, Adly
+AU  - Bricken, Trenton
+AU  - Olsson, Catherine
+AU  - Elhage, Nelson
+AU  - Hume, Tristan
+AU  - Henighan, Tom
+PY  - 2025
+UR  - https://arxiv.org/abs/2502.05887
+T2  - ICML 2025
+N1  - 发现LLM拒绝行为对应表征空间中的几何锥体结构，揭示安全对齐的几何解释。Anthropic机制解释性工作。
+ER  -
+
+TY  - JOUR
+TI  - SmoothQuant: Accurate and Efficient Post-Training Quantization for Large Language Models
+AU  - Xiao, Guangxuan
+AU  - Lin, Ji
+AU  - Seznec, Mickael
+AU  - Wu, Hao
+AU  - Demouth, Julien
+AU  - Han, Song
+PY  - 2023
+UR  - https://arxiv.org/abs/2211.10438
+T2  - ICML 2023
+N1  - 通过平滑激活异常值实现8-bit量化LLM，保持精度同时大幅减少内存占用。LLM量化的关键工作。
+ER  -
+
+TY  - JOUR
+TI  - Generating Sequences by Learning to Jointly Sample and Refine
+AU  - Phillips, Jake Bruce
+AU  - Gat, Itai
+AU  - Khandelwal, Apoorv
+AU  - Shi, Haozhe
+AU  - Kipnis, Alex
+AU  - Xue, Linting
+AU  - Lipman, Yaron
+AU  - Navon, Aviv
+PY  - 2025
+UR  - https://arxiv.org/abs/2411.10768
+T2  - ICLR 2025
+N1  - 提出Joint Sample and Refine (JSR)框架，将LLM生成视为采样+精炼的联合过程，显著提升生成质量。
+ER  -
+
+TY  - JOUR
+TI  - Constitutional AI: Harmlessness from AI Feedback
+AU  - Bai, Yuntao
+AU  - Kadavath, Saurav
+AU  - Kundu, Sandipan
+AU  - Askell, Amanda
+AU  - Kernion, Jackson
+AU  - Jones, Andy
+AU  - Chen, Anna
+AU  - Goldie, Anna
+AU  - Mirhoseini, Azalia
+AU  - McKinnon, Cameron
+AU  - Chen, Carol
+AU  - Olsson, Catherine
+AU  - Olah, Christopher
+AU  - Hernandez, Danny
+AU  - Drain, Dawn
+AU  - Ganguli, Deep
+AU  - Li, Dustin
+AU  - Tran-Johnson, Eli
+AU  - Perez, Ethan
+AU  - Kerr, Jamie
+AU  - Mueller, Jared
+AU  - Ladish, Jeffrey
+AU  - Landau, Joshua
+AU  - Ndousse, Kamal
+AU  - Lukosuite, Kamile
+AU  - Lovitt, Liane
+AU  - Sellitto, Michael
+AU  - Elhage, Nelson
+AU  - Schiefer, Nicholas
+AU  - Mercado, Noemi
+AU  - DasSarma, Nova
+AU  - Lasenby, Robert
+AU  - Larson, Robin
+AU  - Ringer, Sam
+AU  - Johnston, Scott
+AU  - Kravec, Shauna
+AU  - Showk, Sheer El
+AU  - Fort, Stanislav
+AU  - Lanham, Tamera
+AU  - Telleen-Lawton, Timothy
+AU  - Conerly, Tom
+AU  - Henighan, Tom
+AU  - Hume, Tristan
+AU  - Bowman, Samuel R.
+AU  - Hatfield-Dodds, Zac
+AU  - Mann, Ben
+AU  - Amodei, Dario
+AU  - Joseph, Nicholas
+AU  - McCandlish, Sam
+AU  - Brown, Tom
+AU  - Kaplan, Jared
+PY  - 2022
+UR  - https://arxiv.org/abs/2212.08073
+T2  - NeurIPS 2023 (presented)
+N1  - 提出CAI(宪法AI)：用AI反馈替代人类反馈进行无害性对齐。Anthropic Claude安全训练的核心方法。
+ER  -
+
+TY  - JOUR
+TI  - DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model
+AU  - DeepSeek-AI,
+AU  - Liu, Aixin
+AU  - Feng, Bei
+AU  - et al.,
+PY  - 2024
+UR  - https://arxiv.org/abs/2405.04434
+T2  - ICML 2025 (presented) / arXiv 2024
+N1  - 提出MLA(多头潜在注意力)和DeepSeekMoE架构，236B总参数量、21B激活。极高性价比的MoE大模型。
+ER  -
+
+TY  - JOUR
+TI  - DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning
+AU  - DeepSeek-AI,
+AU  - Guo, Daya
+AU  - Yang, Dejian
+AU  - et al.,
+PY  - 2025
+UR  - https://arxiv.org/abs/2501.12948
+T2  - arXiv 2025
+N1  - 纯RL激发LLM推理能力(无SFT冷启动)，发现"顿悟时刻"(aha moment)。R1-Zero→R1蒸馏小模型。开源推理模型标杆。
+ER  -
+
+TY  - JOUR
+TI  - Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback
+AU  - Bai, Yuntao
+AU  - Jones, Andy
+AU  - Ndousse, Kamal
+AU  - Askell, Amanda
+AU  - Chen, Anna
+AU  - DasSarma, Nova
+AU  - Drain, Dawn
+AU  - Fort, Stanislav
+AU  - Ganguli, Deep
+AU  - Henighan, Tom
+AU  - Joseph, Nicholas
+AU  - Kadavath, Saurav
+AU  - Kernion, Jackson
+AU  - Conerly, Tom
+AU  - El-Showk, Sheer
+AU  - Elhage, Nelson
+AU  - Hatfield-Dodds, Zac
+AU  - Hernandez, Danny
+AU  - Hume, Tristan
+AU  - Johnston, Scott
+AU  - Kravec, Shauna
+AU  - Lovitt, Liane
+AU  - Nanda, Neel
+AU  - Olsson, Catherine
+AU  - Amodei, Dario
+AU  - Brown, Tom
+AU  - Clark, Jack
+AU  - McCandlish, Sam
+AU  - Olah, Chris
+AU  - Mann, Ben
+AU  - Kaplan, Jared
+PY  - 2022
+UR  - https://arxiv.org/abs/2204.05862
+T2  - NeurIPS 2023 (presented)
+N1  - Anthropic RLHF详细研究：将有用性和无害性作为双目标优化。Claude训练的核心参考文献。
+ER  -
+
