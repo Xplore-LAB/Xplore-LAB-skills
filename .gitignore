@@ -1,0 +1,11 @@
+# 防止内嵌 .git 被误追踪
+**/.git/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# OS
+.DS_Store
+Thumbs.db
