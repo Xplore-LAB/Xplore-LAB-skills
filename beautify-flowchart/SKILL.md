@@ -280,6 +280,14 @@ When the user asks to use Visio, export to Visio, generate a `.vsdx`, or control
 
 For concrete Visio COM execution steps and script patterns, read `references/visio-automation.md` before generating or running the renderer.
 
+Important layout rule: good Visio output comes from designing the page first, then using Visio as the drawing surface. Do not rely on a generic renderer or automatic connector routing for polished diagrams. For user-facing Visio redraws, first choose a layout template, manually place major branches, reserve connector channels, then render the fixed design.
+
+For calm, warm, publication-ready diagrams, read `references/editorial-diagram-style.md` before drawing. Use its "pattern before pixels" workflow: define the main claim, choose a visual pattern, assign semantic colors, reserve whitespace, then render.
+
+Before finalizing diagrams with multiple branches, modes, outputs, or feedback loops, read `references/logic-validation.md`. Validate the semantic graph before rendering and again after rendering; do not let visual convenience create false process logic.
+
+For Visio diagrams, read `references/visio-layout-contract.md` before rendering. Every polished Visio output must have fixed sections, node coordinates, connector channels, typography, and feedback routes before any drawing script runs.
+
 Preferred workflow:
 
 1. Extract the source article, diagram, or description into a normalized flow structure: nodes, edges, decision points, groups, labels, and layout hints.

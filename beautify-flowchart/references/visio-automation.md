@@ -49,6 +49,9 @@ $doc.SaveAs($vsdxPath)
 
 - Do not claim success unless the `.vsdx` exists and has non-zero size.
 - Use JSON as the source of truth, not one-off hardcoded shape logic.
+- Use a layout contract as the source for coordinates and connector channels. Do not derive polished diagrams from generic shortest-path routing.
 - Use manual orthogonal connectors when preserving screenshot layout.
 - Put arrowheads only on final connector segments.
 - Add connector labels as transparent text boxes near line midpoints.
+- Avoid raw Chinese string literals in `.ps1` files that users may run with `powershell -File`. Windows PowerShell 5.1 can parse UTF-8 without BOM incorrectly and produce errors such as "string is missing the terminator". Keep PowerShell scripts ASCII-only and load Chinese labels from UTF-8 JSON, or require `Get-Content -Encoding UTF8 -Raw script.ps1 | Invoke-Expression`.
+- Use `Microsoft YaHei` as the default font for Chinese and mixed Chinese/English diagrams. Set it explicitly in the Visio script when possible.
