@@ -2,7 +2,7 @@
 name: beautify-flowchart
 description: 美化或重建流程图。强制采用“先提取原图表达，再确认约束，最后执行绘制/美化”的流程，避免在布局、文案、可编辑性上跑偏。
 metadata:
-  version: "2.1.0"
+  version: "2.2.0"
 ---
 
 # beautify-flowchart
@@ -287,6 +287,8 @@ For calm, warm, publication-ready diagrams, read `references/editorial-diagram-s
 Before finalizing diagrams with multiple branches, modes, outputs, or feedback loops, read `references/logic-validation.md`. Validate the semantic graph before rendering and again after rendering; do not let visual convenience create false process logic.
 
 For Visio diagrams, read `references/visio-layout-contract.md` before rendering. Every polished Visio output must have fixed sections, node coordinates, connector channels, typography, and feedback routes before any drawing script runs.
+
+For standard flowcharts, the first generated version must be usable before it is beautiful: no diagonal connectors, no connector-node intersections, no label collisions, clear grid alignment, and validated logic. Add color/style only after this baseline passes.
 
 Preferred workflow:
 
