@@ -2,7 +2,7 @@
 name: skill-publisher
 description: 将本地个人 skill 一键发布到 GitHub 仓库。处理版本 bump、README 同步、版权声明、文件过滤、质量检查，全流程自动化。
 metadata:
-  version: "2.0.0"
+  version: "2.1.0"
 ---
 
 # skill-publisher
@@ -54,6 +54,9 @@ metadata:
   │
   ▼
 验证 ──→ 拉取远程内容逐项确认
+  │
+  ▼
+本地备份 ──→ 同步到 D:/code/skills/<skill-name>/（仅保留 GitHub 上已有的）
   │
   ▼
 报告 ──→ 输出结构化结果摘要
@@ -209,7 +212,7 @@ SKILL.md frontmatter 中建议包含：
 
 ```yaml
 metadata:
-  version: "2.0.0"
+  version: "2.1.0"
   license: MIT
   copyright: "2026 Xplore-LAB"
 ```
@@ -344,7 +347,43 @@ gh api -H "Accept: application/vnd.github.raw+json" \
 
 ---
 
-## 十、输出报告
+## 十、本地备份
+
+### 十-A、备份规则
+
+`D:/code/skills/` 是 GitHub 仓库的本地镜像——只保留已在 GitHub 上的 skill，不上传 GitHub 的 skill 不在这里出现。
+
+推送验证通过后，自动同步：
+
+```bash
+SOURCE="C:/Users/12286/.claude/skills/<skill-name>"
+TARGET="D:/code/skills/<skill-name>"
+
+rm -rf "$TARGET"
+cp -r "$SOURCE" "$TARGET"
+```
+
+### 十-B、清理机制
+
+每次备份后，扫描 `D:/code/skills/`，删除不在 GitHub 仓库中的目录：
+
+```bash
+# 获取 GitHub 上的 skill 列表
+gh api repos/Xplore-LAB/Xplore-LAB-skills/contents/ --jq '.[].name'
+
+# 删除本地有但 GitHub 没有的
+```
+
+这确保了 `D:/code/skills/` 和 GitHub 仓库严格一致——它是"已上传到 GitHub 的本地镜像"，不是"所有本地 skill 的副本"。
+
+### 十-C、禁止行为
+
+- ❌ 不把未上传的 skill 放进 D:/code/skills
+- ❌ 不在 D:/code/skills 里直接改代码（应改 ~/.claude/skills/ 里的，上传后再同步过来）
+
+---
+
+## 十一、输出报告
 
 完成后输出结构化报告，不遗漏任何状态：
 
@@ -372,7 +411,7 @@ gh api -H "Accept: application/vnd.github.raw+json" \
 
 ---
 
-## 十一、禁止事项
+## 十二、禁止事项
 
 ### 来源
 - ❌ 外部引入的 skill 一律不传
