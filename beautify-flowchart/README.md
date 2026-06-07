@@ -1,542 +1,220 @@
-# 美化流程图 Skill
+# beautify-flowchart
 
-这个skill可以帮助你将现有的流程图图片转换为更美观、更专业的版本。支持多种美化模式，满足不同需求。
+> 流程图美化与可编辑重建 Skill — 方法论驱动，先提取再执行，不跑偏。
 
-## ✨ 核心特性
+## 这是什么？
 
-- 🎨 **多种美化模式** - 4种模式，灵活选择
-- 🎯 **智能分析** - AI自动判断需要优化的部分
-- 🎭 **多种主题** - 6种内置主题，一键切换
-- 📐 **布局优化** - 自动优化节点位置和层次
-- 🖼️ **高质量输出** - 支持高分辨率和自定义尺寸
-- 🀄 **中文支持** - 完美支持中文标签和注释
+`beautify-flowchart` 处理**两类完全不同的任务**：
 
-## 🚀 快速开始
+| 任务 | 输入 | 输出 | 适合场景 |
+|------|------|------|----------|
+| **图片美化** | 截图 / 手绘流程图 | 优化后的 PNG | 原图布局满意，只需提升视觉效果 |
+| **可编辑重建** | 任何流程图图片 | draw.io / PPT / SVG / Visio | 后续还要改字、改结构、持续维护 |
 
-### 基本用法
+两类任务不能混做。Skill 会强制先判断任务类型，再走对应路线。
 
-```bash
-/beautify-flowchart path/to/your/flowchart.png
-```
+## 为什么选它？
 
-### 指定模式
+- **方法论驱动** — 不是猜你想要什么，而是走固定的六步流程：提取 → 确认 → 约束 → 路线 → 模式 → 执行
+- **对原图诚实** — 文字不清就标记"无法确认"，不编造业务文案
+- **可编辑优先** — 当用户要"以后还能改"，不给死图片，给源文件
+- **质量验收** — 每步都有检查标准，不交付有明显缺陷的结果
 
-```bash
-# 纯样式美化
-/beautify-flowchart diagram.png --mode style
+## 强制执行流程
 
-# 纯布局优化
-/beautify-flowchart diagram.png --mode layout
-
-# 完全美化
-/beautify-flowchart diagram.png --mode both
-
-# 智能美化（推荐）
-/beautify-flowchart diagram.png --mode smart
-```
-
-### 完整参数
-
-```bash
-/beautify-flowchart diagram.png \
-    --mode both \
-    --theme modern \
-    --direction LR \
-    --width 1920 \
-    --height 1080 \
-    --scale 2 \
-    --background white
-```
-
----
-
-## 📦 支持的模式
-
-### 1️⃣ style（纯样式美化）
-
-**特点：** 保持原布局，仅美化外观
-
-**适用场景：**
-- ✅ 布局已经很满意
-- ✅ 只需要提升视觉效果
-- ✅ 保持原有的阅读习惯
-
-**示例效果：**
-```
-输入：布局合理，颜色单一
-输出：保持布局，应用专业配色
-```
-
-```bash
-/beautify-flowchart diagram.png --mode style
-```
-
----
-
-### 2️⃣ layout（纯布局优化）
-
-**特点：** 优化节点位置，保持原样式
-
-**适用场景：**
-- ✅ 节点位置混乱
-- ✅ 连接线交叉严重
-- ✅ 需要更清晰的层次
-- ✅ 对原有颜色满意
-
-**示例效果：**
-```
-输入：颜色不错，布局混乱
-输出：重新组织，保持配色
-```
-
-```bash
-/beautify-flowchart diagram.png --mode layout
-```
-
----
-
-### 3️⃣ both（完全美化）
-
-**特点：** 同时优化布局和样式
-
-**适用场景：**
-- ✅ 需要专业级呈现
-- ✅ 用于演示或文档
-- ✅ 追求最佳视觉效果
-- ✅ 原图需要全面升级
-
-**示例效果：**
-```
-输入：任何流程图
-输出：全面美化，专业设计
-```
-
-```bash
-/beautify-flowchart diagram.png --mode both
-```
-
----
-
-### 4️⃣ smart（智能美化）⭐ 推荐
-
-**特点：** AI自动分析，智能选择最佳方案
-
-**适用场景：**
-- ✅ 不确定需要什么模式
-- ✅ 希望AI自动判断
-- ✅ 快速获得最佳结果
-
-**智能分析：**
-- 🔍 检测布局问题（节点重叠、连接线交叉等）
-- 🎨 检测样式问题（颜色单一、形状未区分等）
-- ⚡ 智能决策（选择最需要优化的部分）
-
-**示例效果：**
-```
-输入：任何流程图
-输出：AI分析后，针对性优化
-```
-
-```bash
-/beautify-flowchart diagram.png --mode smart
-```
-
----
-
-## 🎭 支持的主题
-
-| 主题 | 颜色风格 | 适用场景 |
-|------|----------|----------|
-| `default` | 蓝色商务 | 通用，正式文档 |
-| `dark` | 暗色系 | 演示，屏幕展示 |
-| `colorful` | 多彩活泼 | 创意，非正式场合 |
-| `minimal` | 极简黑白 | 简洁，专业 |
-| `business` | 专业商务 | 企业，商业文档 |
-| `modern` | 现代时尚 | 现代感，科技风 |
-
-### 主题预览
-
-**default（默认）**
-- 主色调：#4a90d9（蓝色）
-- 风格：专业、正式
-
-**dark（暗色）**
-- 主色调：#1e88e5（亮蓝）
-- 背景：#121212（深灰）
-- 风格：现代、适合演示
-
-**colorful（多彩）**
-- 主色调：#e91e63（粉色）
-- 风格：活泼、创意
-
-### 使用主题
-
-```bash
-/beautify-flowchart diagram.png --theme dark
-/beautify-flowchart diagram.png --theme colorful
-/beautify-flowchart diagram.png --mode both --theme modern
-```
-
----
-
-## 📐 布局方向
-
-| 方向 | 代码 | 说明 |
-|------|------|------|
-| 自动 | `auto` | AI选择最佳方向 |
-| 从上到下 | `TD` 或 `TB` | 最常用，适合层次结构 |
-| 从左到右 | `LR` | 适合宽屏展示 |
-| 从右到左 | `RL` | 特殊需求 |
-
-### 使用方向
-
-```bash
-/beautify-flowchart diagram.png --direction LR
-/beautify-flowchart diagram.png --direction TD
-/beautify-flowchart diagram.png --mode layout --direction auto
-```
-
----
-
-## 🖼️ 输出控制
-
-### 尺寸控制
-
-```bash
-# 指定宽度
-/beautify-flowchart diagram.png --width 1920
-
-# 指定高度
-/beautify-flowchart diagram.png --height 1080
-
-# 同时指定
-/beautify-flowchart diagram.png --width 1920 --height 1080
-```
-
-### 缩放比例
-
-```bash
-# 2倍清晰度
-/beautify-flowchart diagram.png --scale 2
-
-# 4倍清晰度（超清）
-/beautify-flowchart diagram.png --scale 4
-```
-
-### 背景颜色
-
-```bash
-# 透明背景
-/beautify-flowchart diagram.png --background transparent
-
-# 白色背景
-/beautify-flowchart diagram.png --background white
-
-# 自定义颜色
-/beautify-flowchart diagram.png --background "#f5f5f5"
-```
-
----
-
-## 📊 使用场景对比
-
-### 场景1：登录流程图
-
-**输入问题：**
-- 布局：从上到下，但节点间距不均
-- 样式：单一浅蓝色，无区分
-
-**使用 `--mode style`：**
-- 保持原布局
-- 添加专业配色
-- 区分不同节点类型
-- 输出：专业、清晰
-
-**使用 `--mode layout`：**
-- 重新组织节点
-- 优化层次结构
-- 保持原颜色
-- 输出：清晰、有条理
-
-**使用 `--mode both`：**
-- 完全重新设计
-- 专业布局 + 配色
-- 添加分组和注释
-- 输出：演示级别
-
----
-
-### 场景2：复杂业务流程
-
-**输入问题：**
-- 节点众多（20+）
-- 连接线交叉严重
-- 逻辑关系复杂
-
-**推荐方案：**
-```bash
-# 使用smart模式，让AI分析最佳方案
-/beautify-flowchart complex-flow.png --mode smart
-
-# 或者使用both模式，全面优化
-/beautify-flowchart complex-flow.png --mode both --direction LR
-```
-
----
-
-### 场景3：演示文稿
-
-**需求：**
-- 高分辨率
-- 暗色主题
-- 专业外观
-
-**推荐方案：**
-```bash
-/beautify-flowchart diagram.png \
-    --mode both \
-    --theme dark \
-    --scale 2 \
-    --width 1920 \
-    --background "#121212"
-```
-
----
-
-## 🔧 高级用法
-
-### 批量处理
-
-```bash
-# 处理目录下所有PNG文件
-for file in *.png; do
-    /beautify-flowchart "$file" --mode smart
-done
-
-# 处理所有图片格式
-for file in *.png *.jpg *.jpeg; do
-    if [ -f "$file" ]; then
-        /beautify-flowchart "$file" --mode both
-    fi
-done
-```
-
-### 条件处理
-
-```bash
-# 根据文件大小选择模式
-size=$(stat -f%z "$file" 2>/dev/null || stat -c%s "$file")
-if [ "$size" -gt 100000 ]; then
-    # 大文件使用smart模式
-    /beautify-flowchart "$file" --mode smart
-else
-    # 小文件使用both模式
-    /beautify-flowchart "$file" --mode both
-fi
-```
-
-### 保留原文件
-
-```bash
-# 生成带时间戳的输出文件
-timestamp=$(date +%Y%m%d_%H%M%S)
-/beautify-flowchart diagram.png --output "diagram_${timestamp}.png"
-```
-
----
-
-## 📋 参数完整列表
-
-| 参数 | 说明 | 默认值 | 可选值 |
-|------|------|--------|--------|
-| `--mode` | 美化模式 | `smart` | `style`, `layout`, `both`, `smart` |
-| `--theme` | 颜色主题 | `default` | `default`, `dark`, `colorful`, `minimal`, `business`, `modern` |
-| `--direction` | 布局方向 | `auto` | `auto`, `TD`, `LR`, `TB`, `RL` |
-| `--width` | 输出宽度 | `auto` | 任意数字 |
-| `--height` | 输出高度 | `auto` | 任意数字 |
-| `--scale` | 缩放比例 | `1` | `1`, `2`, `3`, `4` |
-| `--background` | 背景色 | `transparent` | `transparent`, `white`, `black`, 颜色代码 |
-| `--output` | 输出文件名 | 自动生成 | 任意文件名 |
-
----
-
-## 🎯 最佳实践
-
-### 1. 模式选择
-
-- **不确定需求** → 使用 `smart` 模式
-- **布局已满意** → 使用 `style` 模式
-- **样式已满意** → 使用 `layout` 模式
-- **需要最佳效果** → 使用 `both` 模式
-
-### 2. 主题选择
-
-- **正式文档** → `default` 或 `business`
-- **演示文稿** → `dark` 或 `modern`
-- **创意展示** → `colorful`
-- **简洁需求** → `minimal`
-
-### 3. 尺寸设置
-
-- **网页展示** → `--width 1200`
-- **演示文稿** → `--width 1920 --scale 2`
-- **打印输出** → `--scale 3` 或 `--scale 4`
-- **社交媒体** → `--width 800 --height 600`
-
-### 4. 性能优化
-
-- 简单流程图 → 使用 `style` 或 `layout`（更快）
-- 复杂流程图 → 使用 `smart`（更智能）
-- 批量处理 → 使用 `smart`（自动判断）
-
----
-
-## ❓ 常见问题
-
-### Q: 应该选择哪个模式？
-
-A: 如果不确定，使用 `smart` 模式。AI会自动分析并选择最佳方案。
-
-### Q: 为什么美化后布局变化很大？
-
-A: 使用 `--mode style` 会保持原布局。`both` 模式会同时优化布局和样式。
-
-### Q: 如何保持原有颜色？
-
-A: 使用 `--mode layout` 只优化布局，保持原样式。
-
-### Q: 如何获得更高清的图片？
-
-A: 使用 `--scale 2` 或 `--scale 4`。
-
-### Q: 支持哪些图片格式？
-
-A: 支持 PNG、JPEG、SVG、WebP 等常见格式。
-
-### Q: 中文显示有问题？
-
-A: 确保系统安装了中文字体（如微软雅黑）。
-
-### Q: 处理时间太长？
-
-A: 复杂流程图使用 `both` 模式会较慢。可以尝试 `smart` 模式或 `style` 模式。
-
----
-
-## 📚 示例文件
-
-skill目录中包含示例文件，可参考学习：
+每次调用都按以下顺序执行，不可跳过：
 
 ```
-examples/
-├── input-example.mmd          # 输入示例代码
-├── input-example.png          # 输入示例图片
-├── output-style.mmd           # style模式输出
-├── output-style.png           # style模式图片
-├── output-layout.mmd          # layout模式输出
-├── output-layout.png          # layout模式图片
-├── output-both.mmd            # both模式输出
-├── output-both.png            # both模式图片
-└── README.md                  # 示例说明
+第 1 步  提取原图内容
+        ├─ 分区/泳道结构
+        ├─ 节点列表 + 判断节点列表
+        ├─ 连线关系 + 文字内容
+        ├─ 颜色语义 + 布局关系
+        └─ 标记不确定性（可确认 / 大概率 / 无法确认）
+
+第 2 步  输出结构化提取结果
+        └─ 给用户确认，尤其标注不确定项
+
+第 3 步  读取用户约束
+        ├─ 布局是否必须完全一致？
+        ├─ 文字是否必须完全一致？
+        ├─ 需要可编辑吗？
+        ├─ 交付 PNG 还是源文件？
+        └─ 只要美化 / 只要重建 / 两个都要？
+
+第 4 步  选择执行路线
+        ├─ 路线 A：图片美化（用户说"美化"、"布局别动"）
+        └─ 路线 B：可编辑重建（用户说"可编辑"、"后面还要改字"）
+
+第 5 步  选择模式
+        ├─ style  — 只改颜色/字体/线宽/圆角，布局不动
+        ├─ layout — 只改位置/对齐/间距/连线绕行，文案和颜色不动
+        ├─ both   — 同时优化布局和样式
+        └─ smart  — AI 自动分析后选择（受约束降级）
+
+第 6 步  执行 + 验收
+        ├─ 图片美化 → 检查布局/箭头/分区/颜色/遮挡
+        └─ 可编辑重建 → 检查可打开/可编辑/可拖动/结构一致
 ```
 
----
+## 两种路线详解
 
-## 🛠️ 故障排除
+### 路线 A：图片美化
 
-### 问题1：中文显示为方框
+保持原图结构，针对性优化视觉效果。
 
-**解决方案：**
-```bash
-# 确保系统安装了中文字体
-# Windows: 微软雅黑、黑体
-# macOS: 苹方、华文黑体
-# Linux: 文泉驿微米黑
+**适用条件：**
+- 用户说"美化一下"
+- 用户说"布局别动"
+- 用户只要图片，不要求后续频繁改字
 
-# 或者在配置中指定字体
-/beautify-flowchart diagram.png --theme default --font "Microsoft YaHei"
+**四种模式：**
+
+| 模式 | 允许改 | 禁止改 | 什么时候用 |
+|------|--------|--------|-----------|
+| `style` | 颜色、字体、线宽、圆角、内边距、阴影/描边 | 节点位置、分区、箭头走向、阅读顺序 | 布局满意，只换皮 |
+| `layout` | 位置、对齐、间距、连线绕行 | 文案、颜色语义、节点类别 | 排版乱，颜色 OK |
+| `both` | 上述全部 | — | 需要全面翻新 |
+| `smart` | AI 自动判断 | 受用户约束限制 | 不确定该用哪个 |
+
+> **约束降级规则**：用户说"布局完全一致" → `smart` 强制降级为 `style`。
+
+### 路线 B：可编辑重建
+
+从原图提取结构与文案，重建为可编辑源文件。
+
+**适用条件：**
+- 用户说"我要能改字"
+- 用户说"可编辑"
+- 用户要 `draw.io` / `PPT` / `SVG` / `Visio`
+- 原图是模糊截图，继续修图意义不大
+
+**输出格式优先级：**
+
+| 优先级 | 格式 | 推荐原因 |
+|--------|------|----------|
+| ⭐⭐⭐ | draw.io (.drawio) | 免费、在线、流程图专用、中文友好 |
+| ⭐⭐ | Visio (.vsdx) | 企业标准、COM 自动化、质量模式 |
+| ⭐ | PPT (.pptx) | 通用、演示方便 |
+| ⭐ | SVG | 矢量、可嵌入网页 |
+
+**重建顺序（严格）：**
+1. 先建分区/泳道
+2. 再建节点
+3. 再建判断节点
+4. 再连线
+5. 最后填充文字
+6. 最后统一风格
+
+## Visio 集成（v2.1+）
+
+### 推荐工作流
+
+```
+原图 / 描述
+    │
+    ▼
+提取规范化流程结构（节点、边、判断、分组、标签、布局提示）
+    │
+    ▼
+输出 Mermaid 源码 + 节点/边表（可编辑中间表示）
+    │
+    ▼
+生成声明式 JSON 图规范（节点、连接器、样式、布局元数据）
+    │
+    ▼
+通过 JSON → Visio COM 渲染器生成 .vsdx
+    │
+    ▼
+可选：导出 PNG / PDF 预览
 ```
 
-### 问题2：mermaid-cli命令未找到
+### Visio 质量模式
 
-**解决方案：**
-```bash
-# 重新安装
-npm install -g @mermaid-js/mermaid-cli
+当用户要求"正式、专业、可直接用于文档"时，遵循以下规则：
 
-# 检查npm全局路径
-npm config get prefix
+| 规则 | 说明 |
+|------|------|
+| 重构优于复制 | 超过 18 节点拆分为概览 + 子流程页 |
+| 正交连接器 | 禁止对角线，每根线走清晰水平/垂直段 |
+| 分支一致性 | 主路径统一方向，拒绝/异常从侧面退出 |
+| 可读排版 | 短标题、9-11pt 正文、无旋转文字 |
+| 克制配色 | 红/粉（入口）、蓝/灰（处理）、琥珀（判断）、绿（终点） |
+| 留白 | 图面使用率不超过 70% |
 
-# 添加到PATH
-export PATH="$(npm config get prefix)/bin:$PATH"
+### 交付前检查清单
+
+- [ ] 无对角线连接器（除非明确要求）
+- [ ] 无连接线穿过节点
+- [ ] 无连接器标签与节点或其他标签重叠
+- [ ] 决策菱形内无旋转文字
+- [ ] 每个判断节点的出口都有清晰标签
+- [ ] 每页有标题、统一边距、对齐的列/行
+
+## 参考文件
+
+Skill 目录下的配套参考文件：
+
+```
+references/
+├── editorial-diagram-style.md   # 编辑级图表风格指南：主张→模式→颜色→留白→渲染
+├── logic-validation.md          # 逻辑验证：渲染前后验证语义图，视觉便利不创造虚假逻辑
+├── visio-automation.md          # Visio COM 自动化步骤与脚本模式
+└── visio-layout-contract.md     # Visio 布局契约：固定分区/坐标/连接器通道/排版/反馈路线
 ```
 
-### 问题3：图片太大或太小
+## 策略示例
 
-**解决方案：**
-```bash
-# 使用缩放比例
-/beautify-flowchart diagram.png --scale 2
+### 场景 1："布局完全一致，做美化"
 
-# 或指定具体尺寸
-/beautify-flowchart diagram.png --width 1920 --height 1080
+```
+提取原图 → 输出摘要 → 走 style → 只改样式
+明确告知：这是图片编辑，不是源文件，后续改字仍不方便
 ```
 
-### 问题4：布局混乱
+### 场景 2："我要能改字"
 
-**解决方案：**
-```bash
-# 使用layout模式专门优化布局
-/beautify-flowchart diagram.png --mode layout
-
-# 或使用smart模式让AI判断
-/beautify-flowchart diagram.png --mode smart
+```
+提取原图结构与文案 → 标出不确定文字 → 走可编辑重建 → 优先输出 draw.io
+明确告知：这次不是修图片，是按结构重建可编辑源文件
 ```
 
-### 问题5：样式没有变化
+### 场景 3："先美化，再给我可编辑版本"
 
-**解决方案：**
-```bash
-# 使用style或both模式
-/beautify-flowchart diagram.png --mode style
-/beautify-flowchart diagram.png --mode both
+```
+提取原图 → 输出摘要 → 做 style 图片美化 → 做 draw.io 重建
+明确告知：这是两份不同交付物，用途不同
 ```
 
----
+## 禁止事项
 
-## 📞 技术支持
+### 图片美化时禁止
+- 重新布局
+- 擅自拉开节点间距
+- 改变箭头走向
+- 改变阅读顺序
 
-如果遇到问题，请检查：
+### 可编辑重建时禁止
+- 把"重建"伪装成"修图"
+- 未说明误差就声称"完全一致"
+- 文字不清时擅自编造业务文案
 
-1. ✅ Node.js和npm是否正确安装
-2. ✅ mermaid-cli是否已全局安装
-3. ✅ 图片文件是否存在且可读
-4. ✅ 系统是否安装了中文字体
-5. ✅ 参数是否正确（模式、主题等）
+### 所有任务禁止
+- 跳过"原图提取"直接开始重画或美化
+- 在没有用户确认的情况下混做美化与重建
 
-更多帮助，请查看：
-- 快速开始：`cat ~/.claude/skills/beautify-flowchart/QUICKSTART.md`
-- 示例文件：`ls ~/.claude/skills/beautify-flowchart/examples/`
+## 底线
 
----
+- 如果用户真实目标是"后面还要继续改" → 只给图片通常不是正确答案
+- 如果用户真实目标是"原图别动，只是更专业" → 不应该擅自重排布局
+- 如果图中文字看不清 → 标记"无法确认"，而不是猜一个填上去
 
-## 📝 更新日志
+## 版本
 
-### v1.1.0 (2026-06-03)
-- ✨ 新增4种美化模式：style, layout, both, smart
-- ✨ 新增6种颜色主题
-- ✨ 支持自定义布局方向
-- ✨ 支持自定义输出尺寸和缩放
-- ✨ 添加智能分析功能
+当前版本：**v2.2.0**（2026-06-06）
 
-### v1.0.0 (2026-06-03)
-- 🎉 初始版本
-- ✅ 支持基本流程图美化
-- ✅ 支持中文标签
-- ✅ 提供默认蓝色主题
+完整更新日志见 [CHANGELOG.md](./CHANGELOG.md)。
 
----
-
-## 📄 许可证
+## 许可证
 
 MIT License

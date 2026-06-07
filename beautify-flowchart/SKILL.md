@@ -2,7 +2,7 @@
 name: beautify-flowchart
 description: 美化或重建流程图。强制采用“先提取原图表达，再确认约束，最后执行绘制/美化”的流程，避免在布局、文案、可编辑性上跑偏。
 metadata:
-  version: "2.1.0"
+  version: "2.2.0"
 ---
 
 # beautify-flowchart
