@@ -492,3 +492,4 @@ Researcher 角色分级，AI 自动分析主题，触发对应级别（**原则�
 **违规后果**：`s3-start-gate.mjs` 会检查 `search-ledger.jsonl` 中的 S0 时间戳检索证据，未完成 S0 将导致 S3 启动门禁失败（`process.exit(1)`）。
 
 **专项深化**：为何必须联网、如何锚定最新时间、如何做时态验证、如何把检索反哺方法论与知识库，见 [`references/05-ops/web-search-strategy-deep.md`](../05-ops/web-search-strategy-deep.md)。
+
