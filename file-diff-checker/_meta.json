@@ -1,0 +1,26 @@
+{
+  "name": "file-diff-checker",
+  "version": "3.0.0",
+  "scene": "重复文件差异对比",
+  "category": "办公提效",
+  "subtitle": "自动去重、智能归类，构建文件知识关联",
+  "target_user": "办公人员、项目管理者、文档管理员",
+  "core_need": "快速发现文件差异并去重",
+  "trigger_words": [
+    "文件对比",
+    "差异分析",
+    "去重"
+  ],
+  "output_format": "Markdown 差异报告 + 去重建议清单",
+  "priority": "P2",
+  "tools": [
+    "write_to_file",
+    "read_file"
+  ],
+  "dependencies": [
+    "note-organizer"
+  ],
+  "real_objects": "本地文件（read_file）、对比报告文件（write_to_file）",
+  "deliverables": "Markdown 差异报告、去重后文件清单",
+  "need_external_search": "否"
+}
