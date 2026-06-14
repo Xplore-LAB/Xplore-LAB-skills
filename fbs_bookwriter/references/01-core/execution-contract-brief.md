@@ -65,4 +65,3 @@
 - 入口路由与首响约束：`references/01-core/intake-and-routing.md`
 - 多 Writer 磁盘协同：`references/05-ops/multi-agent-horizontal-sync.md`
 - 承诺与工具对照：`references/05-ops/promise-code-user-alignment.md`
-
