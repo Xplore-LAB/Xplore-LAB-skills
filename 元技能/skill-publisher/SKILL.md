@@ -272,6 +272,24 @@ Thumbs.db          # Windows 元数据
 
 永远使用 `gh api`，不使用 `git clone/push`。原因：系统代理可能阻断 HTTPS git 连接，但 `gh` CLI 走独立认证通道。
 
+### 八-A2、目标路径：分类文件夹
+
+仓库根按功能分类组织（2026-08-25 起），推送目标路径为 `<分类文件夹>/<skill-name>/`，不再是根目录平铺：
+
+| 分类文件夹 | 包含 skill |
+|---|---|
+| 模式与人设 | modes、interview-agent、research-lab、persona-switch |
+| 知识管理 | 2nd-brain、knowledge-archive、dao-fa-shu-model |
+| 科研与写作 | paper-experience、chuangye |
+| 信息采集 | wechat-article-reader |
+| 图表可视化 | beautify-flowchart |
+| 研发与运维 | github-helper、llm-tracker-maintainer、wecomcli-setup、qclaw-cron-skill |
+| 云服务 | weiyun |
+| 元技能 | experience-to-skill、skill-publisher、feature-testing |
+| 第三方收录 | 外部引入件（按来源规则禁止重复上传） |
+
+新 skill 按功能归入对应文件夹；不确定归属时先问用户。
+
 ### 八-B、推送顺序
 
 一个 skill 内的文件按此顺序推送（一个 skill 一个 commit，包含该 skill 的所有文件变更）：
@@ -335,7 +353,7 @@ with open(r'<filepath>', 'rb') as f:
 
 ```bash
 gh api -H "Accept: application/vnd.github.raw+json" \
-  repos/Xplore-LAB/Xplore-LAB-skills/contents/<skill>/<file> | head -20
+  "repos/Xplore-LAB/Xplore-LAB-skills/contents/<分类文件夹>/<skill>/<file>" | head -20
 ```
 
 验证清单：
@@ -370,8 +388,9 @@ cp -r "$SOURCE" "$TARGET"
 每次备份后，扫描 `$SKILL_BACKUP_DIR/`，删除不在 GitHub 仓库中的目录：
 
 ```bash
-# 获取 GitHub 上的 skill 列表
-gh api repos/Xplore-LAB/Xplore-LAB-skills/contents/ --jq '.[].name'
+# 获取 GitHub 上的 skill 列表（仓库根为中文分类文件夹，用 git trees 递归查询避免中文路径编码问题）
+gh api "repos/Xplore-LAB/Xplore-LAB-skills/git/trees/main?recursive=1" \
+  --jq '.tree[].path | select(endswith("/SKILL.md")) | sub("/SKILL.md$";"")'
 
 # 删除本地有但 GitHub 没有的
 ```

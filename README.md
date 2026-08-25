@@ -1,10 +1,27 @@
 # Xplore-LAB Skills
 
-QClaw / OpenClaw 助手自定义技能仓库，共 30 个 skill，分为「自建」与「第三方收录」两类。
+QClaw / OpenClaw 助手自定义技能仓库，共 30 个 skill，按功能分类文件夹组织，分为「自建」与「第三方收录」两类。
+
+## 目录结构
+
+```
+├── 模式与人设/        modes、interview-agent、research-lab、persona-switch
+├── 知识管理/          2nd-brain、knowledge-archive、dao-fa-shu-model
+├── 科研与写作/        paper-experience、chuangye
+├── 信息采集/          wechat-article-reader
+├── 图表可视化/        beautify-flowchart
+├── 研发与运维/        github-helper、llm-tracker-maintainer、wecomcli-setup、qclaw-cron-skill
+├── 云服务/            weiyun
+├── 元技能/            experience-to-skill、skill-publisher、feature-testing
+└── 第三方收录/        kdocs、tencent-news、wendao、youdaonote、processon、fbs_bookwriter、
+                      searxng-bangs、xbrowser、file-diff-checker、bdpan-storage、flyai
+```
+
+> 说明：分类文件夹仅用于源码组织。安装到宿主时，把对应 skill 目录平铺复制到宿主的 skills 目录（如 ~/.claude/skills/），skill 正文中的 `skills/<name>/` 引用均指安装后的平铺路径。
 
 ## 自建技能（19 个）
 
-### 模式与人设
+### 模式与人设/
 
 | Skill | 用途 | 触发 |
 |---|---|---|
@@ -13,7 +30,7 @@ QClaw / OpenClaw 助手自定义技能仓库，共 30 个 skill，分为「自�
 | research-lab | 科研模式：假设驱动循环、PubMed/arXiv 检索、证据追踪 | 「进入科研模式」、发论文链接 |
 | persona-switch | 切换 agent 人设（赛博朋友 / 创始人龙虾 / 温柔伴侣） | 「切换人设」 |
 
-### 知识管理与思维方法
+### 知识管理/
 
 | Skill | 用途 | 触发 |
 |---|---|---|
@@ -21,26 +38,26 @@ QClaw / OpenClaw 助手自定义技能仓库，共 30 个 skill，分为「自�
 | knowledge-archive | 知识链接即时存档（本地 + 飞书同步）。需 Linux + xray + 飞书环境变量 | 发送知识类 URL |
 | dao-fa-shu-model | 道法术三层结构化思维模型 | 信息整理、写作、会议纪要、prompt 优化 |
 
-### 科研与写作
+### 科研与写作/
 
 | Skill | 用途 | 触发 |
 |---|---|---|
 | paper-experience | 论文投稿经验：选刊、Cover Letter、审稿回复（搜索走 searxng-bangs） | 投稿经验、期刊选择、审稿回复 |
 | chuangye | 创业方法论知识库（《创业可以学》+ OPC 一人公司） | 创业、OPC、副业商业化话题 |
 
-### 信息采集
+### 信息采集/
 
 | Skill | 用途 | 触发 |
 |---|---|---|
 | wechat-article-reader | 读取微信公众号文章。需 xray 代理（SOCKS5 7890） | mp.weixin.qq.com 链接 |
 
-### 图表可视化
+### 图表可视化/
 
 | Skill | 用途 | 触发 |
 |---|---|---|
 | beautify-flowchart | 流程图美化与可编辑重建（draw.io / PPT / SVG / Visio） | 提供流程图要求美化或重建 |
 
-### 研发与运维
+### 研发与运维/
 
 | Skill | 用途 | 触发 |
 |---|---|---|
@@ -49,13 +66,13 @@ QClaw / OpenClaw 助手自定义技能仓库，共 30 个 skill，分为「自�
 | wecomcli-setup | 企业微信 CLI 安装引导与自然语言翻译 | 「安装企业微信 CLI」「帮我发消息给张三」 |
 | qclaw-cron-skill | 定时任务权威指南（MANDATORY，禁止凭记忆猜参数） | 「cron」「定时」「提醒」「打卡」 |
 
-### 云服务
+### 云服务/
 
 | Skill | 用途 | 触发 |
 |---|---|---|
 | weiyun | 微云网盘 12 个 MCP Tool 与 FTN 上传（v1.0.4，已按渐进披露拆分文档） | 「微云上传」「微云文件管理」 |
 
-### Skill 生态元技能
+### 元技能/
 
 | Skill | 用途 | 触发 |
 |---|---|---|
@@ -63,7 +80,7 @@ QClaw / OpenClaw 助手自定义技能仓库，共 30 个 skill，分为「自�
 | skill-publisher | 本地 skill 一键发布到 GitHub（版本 / LICENSE / 质量门 / 推送） | 发布 skill 到 GitHub |
 | feature-testing | 新功能上线测试规则与回滚方案 | 「上线前测一下」「灰度试跑」 |
 
-## 第三方收录（11 个，来源标记见各目录）
+## 第三方收录/（11 个，来源标记见各目录）
 
 | Skill | 来源 | 用途 |
 |---|---|---|
