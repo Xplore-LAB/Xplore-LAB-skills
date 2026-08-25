@@ -1,6 +1,6 @@
 ---
 name: wechat-article-reader
-description: 读取微信公众号文章内容。当用户提供微信公众号文章链接（mp.weixin.qq.com/s/...）时使用此技能。通过代理 + 特定 UA 绕过微信反爬机制。
+description: 读取微信公众号文章内容。当用户提供微信公众号文章链接（mp.weixin.qq.com/s/...）时使用此技能。通过代理 + 特定 UA 绕过微信反爬机制。运行环境要求：xray 代理（SOCKS5 7890，默认部署于 Linux 服务器）。
 ---
 
 ## When NOT to Use

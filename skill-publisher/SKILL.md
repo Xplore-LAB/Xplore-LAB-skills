@@ -56,7 +56,7 @@ metadata:
 验证 ──→ 拉取远程内容逐项确认
   │
   ▼
-本地备份 ──→ 同步到 D:/code/skills/<skill-name>/（仅保留 GitHub 上已有的）
+本地备份 ──→ 同步到 $SKILL_BACKUP_DIR/<skill-name>/（仅保留 GitHub 上已有的）
   │
   ▼
 报告 ──→ 输出结构化结果摘要
@@ -351,13 +351,15 @@ gh api -H "Accept: application/vnd.github.raw+json" \
 
 ### 十-A、备份规则
 
-`D:/code/skills/` 是 GitHub 仓库的本地镜像——只保留已在 GitHub 上的 skill，不上传 GitHub 的 skill 不在这里出现。
+备份目录由环境变量 `SKILL_BACKUP_DIR` 指定（示例：`export SKILL_BACKUP_DIR=~/backups/skills`），未设置时先向用户确认备份位置，禁止使用硬编码路径。
+
+`$SKILL_BACKUP_DIR/` 是 GitHub 仓库的本地镜像——只保留已在 GitHub 上的 skill，不上传 GitHub 的 skill 不在这里出现。
 
 推送验证通过后，自动同步：
 
 ```bash
-SOURCE="C:/Users/12286/.claude/skills/<skill-name>"
-TARGET="D:/code/skills/<skill-name>"
+SOURCE="<本地 skill 源目录>/<skill-name>"
+TARGET="$SKILL_BACKUP_DIR/<skill-name>"
 
 rm -rf "$TARGET"
 cp -r "$SOURCE" "$TARGET"
@@ -365,7 +367,7 @@ cp -r "$SOURCE" "$TARGET"
 
 ### 十-B、清理机制
 
-每次备份后，扫描 `D:/code/skills/`，删除不在 GitHub 仓库中的目录：
+每次备份后，扫描 `$SKILL_BACKUP_DIR/`，删除不在 GitHub 仓库中的目录：
 
 ```bash
 # 获取 GitHub 上的 skill 列表
@@ -374,12 +376,12 @@ gh api repos/Xplore-LAB/Xplore-LAB-skills/contents/ --jq '.[].name'
 # 删除本地有但 GitHub 没有的
 ```
 
-这确保了 `D:/code/skills/` 和 GitHub 仓库严格一致——它是"已上传到 GitHub 的本地镜像"，不是"所有本地 skill 的副本"。
+这确保了 `$SKILL_BACKUP_DIR/` 和 GitHub 仓库严格一致——它是"已上传到 GitHub 的本地镜像"，不是"所有本地 skill 的副本"。
 
 ### 十-C、禁止行为
 
-- ❌ 不把未上传的 skill 放进 D:/code/skills
-- ❌ 不在 D:/code/skills 里直接改代码（应改 ~/.claude/skills/ 里的，上传后再同步过来）
+- ❌ 不把未上传的 skill 放进 $SKILL_BACKUP_DIR
+- ❌ 不在 $SKILL_BACKUP_DIR 里直接改代码（应改 ~/.claude/skills/ 里的，上传后再同步过来）
 
 ---
 

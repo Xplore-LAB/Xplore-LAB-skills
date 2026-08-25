@@ -1,6 +1,6 @@
 ---
 name: knowledge-archive
-description: 知识链接即时存档。当用户发送任何知识类链接（论文、项目、文章、视频）时使用此技能。自动完成：读取内容 → 本地存档 → 飞书同步 → 摘要汇报。适用于 mp.weixin.qq.com、github.com、arxiv.org 及其他知识类 URL。
+description: 知识链接即时存档。当用户发送任何知识类链接（论文、项目、文章、视频）时使用此技能。自动完成：读取内容 → 本地存档 → 飞书同步 → 摘要汇报。适用于 mp.weixin.qq.com、github.com、arxiv.org 及其他知识类 URL。运行环境要求：Linux 服务器 + xray 代理（SOCKS5 7890）+ 飞书环境变量。
 ---
 
 # 知识链接即时存档
@@ -60,8 +60,14 @@ curl -s --max-time 15 --proxy socks5h://127.0.0.1:7890 \
 命名规则：`<英文短横线分隔的关键词>.md`，如 `skill-writing-methodology.md`
 
 ### Step 4: 飞书同步（可选）
-如果内容有长期参考价值，同步到飞书 Agent 资料库 `ERk6dhu9PooMmzxE4VDc0DIZnNd`。
-新资源创建后立即加 full_access，open_id: `ou_e4a8f8691d8aca6c6493d53b68763bde`。
+如果内容有长期参考价值，同步到飞书 Agent 资料库。folder token 从环境变量 `FEISHU_FOLDER_TOKEN` 读取，不在任何文档中明文记录。
+新资源创建后立即加 full_access，open_id 从环境变量 `FEISHU_OPEN_ID` 读取。
+
+配置方式（首次使用前）：
+```bash
+export FEISHU_FOLDER_TOKEN="<你的飞书文件夹 token>"
+export FEISHU_OPEN_ID="<你的飞书 open_id>"
+```
 
 ### Step 5: 摘要汇报
 给用户 3-5 句话总结核心内容，附上存档位置。

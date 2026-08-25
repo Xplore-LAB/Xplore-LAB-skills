@@ -30,10 +30,12 @@ description: 科研论文经验助手。当用户询问论文投稿经验、期�
 
 ### Step 2: 执行搜索
 
-使用 online-search skill 搜索：
+使用本仓库的 searxng-bangs skill 搜索（需本地或远端 SearXNG 实例）：
 ```bash
-node 'D:\APP\QClaw\resources\openclaw\config\skills\online-search\scripts\prosearch.cjs' --keyword=<搜索词> --cnt=8
+python3 skills/searxng-bangs/scripts/search.py "<搜索词>"
 ```
+
+也可使用宿主编排的内置联网搜索工具，按当前环境可用能力选择。
 
 **常用搜索词前缀：**
 - 期刊投稿：`{期刊名}+投稿+经验+攻略`
@@ -58,7 +60,7 @@ node 'D:\APP\QClaw\resources\openclaw\config\skills\online-search\scripts\prosea
 - 《控制理论与应用》 — 教育部主管，EI来源
 - 《控制与决策》 — IEEE CSDE 联合出版
 - CAC（中国自动化大会）— CCF推荐会议
-- CCC（中国控制会议）— CCC推荐会议
+- CCC（中国控制会议）：CCF 推荐会议
 
 **AI与智能系统类：**
 - 知识图谱+大模型交叉论文

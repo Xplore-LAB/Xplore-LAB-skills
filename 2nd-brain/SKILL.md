@@ -1,6 +1,6 @@
 ---
-name: brain
-version: 1.3.0
+name: 2nd-brain
+version: 1.3.1
 description: |
   Personal knowledge base for capturing and retrieving information about people,
   places, restaurants, games, tech, events, media, ideas, and organizations.

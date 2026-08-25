@@ -22,8 +22,9 @@ git clone git@github.com:作者/仓库名.git [本地目录名]
 
 ### 推送本地项目到 GitHub（新仓库）
 
-**Step 1：在 GitHub 网页创建空仓库（用户自行操作）**
-→ 登录 github.com → `+` → `New repository` → 填写仓库名 → 创建
+**Step 1：创建空仓库（二选一）**
+- 网页操作：登录 github.com → `+` → `New repository` → 填写仓库名 → 创建
+- 命令行（已安装 gh CLI 时）：`gh repo create 仓库名 --public`
 
 **Step 2：本地初始化并推送**
 ```bash
@@ -55,5 +56,5 @@ git log --oneline -5
 
 - 克隆/推送公开仓库：✅ 可以
 - 推送需要 GitHub 上已创建对应仓库
-- 用户的本地工作目录：`C:\Users\12286\.qclaw\workspace`
-- 克隆时目标路径可指定，默认为工作目录
+- 工作目录以当前会话的实际目录为准，不假定固定路径
+- 克隆时目标路径可指定，默认为当前工作目录
